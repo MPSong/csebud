@@ -37,13 +37,15 @@ public class ExcelRead {
 					temp_courseMake_Up=getCellValue(row, 13);  //재수강구분
 					temp_Grade=getCellValue(row, 11);  //등급
 					String EnglishCourse=getCellValue(row, 21);   //원어강의종류
-					if(EnglishCourse!="false"){
+					if(EnglishCourse.equals("영어")){
 						temp_IsEnglishCourse=true;
 					}
 					else temp_IsEnglishCourse=false;
-					courses.add(new Course(temp_LectureCode, temp_courseMake_Up, temp_Grade, temp_IsEnglishCourse));					
+					courses.add(new Course(temp_LectureCode, temp_courseMake_Up, temp_Grade, temp_IsEnglishCourse));
+					System.out.println(temp_LectureCode+" "+ temp_courseMake_Up+" " + temp_Grade +" "+ temp_IsEnglishCourse);
 				}
 			}
+			System.out.println("");
 		}
 		catch (Exception e) {  //에러 검사
 			e.printStackTrace(System.out);
@@ -84,11 +86,11 @@ public class ExcelRead {
 
 	}
 
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ExcelRead excel = new ExcelRead();
 		excel.getExcelData("2012.xlsx", null);
-	}*/
+	}
 	
 	/*
 	 * public static List<String> writeToMysql(String filepath, String
