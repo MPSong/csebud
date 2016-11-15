@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Groupmap">
+	<typeAlias alias="Groupmap" type="sample.domain.Groupmap" />
+
+	<delete id="delete" parameterClass="int">
+		delete from groupmap where id = #id#
+	</delete>
+
+	<insert id="add" parameterClass="Groupmap">
+		insert into groupmap (id, server, host) values(#id#, #server#, #host#)
+ 	</insert>
+ 	
+	<update id="update" parameterClass="Groupmap">
+		update groupmap set server = #server#, host = #host# where id = #id#
+	</update>
+ 	
+	<select id="get" parameterClass="int" resultClass="Groupmap">
+		select * from groupmap where id = #id#
+ 	</select>
+
+	<select id="list" resultClass="Groupmap">
+		select * from groupmap order by id
+ 	</select>
+</sqlMap>
