@@ -1,9 +1,6 @@
 package buddy.handler;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import buddy.domain.Member;
+import buddy.member.Member;
 import buddy.member.MemberService;
+import buddy.review.LectureReviewManager;
+import buddy.lecture.LectureService;
 import buddy.rss.Announcement;
 
 @Controller
@@ -24,6 +23,8 @@ import buddy.rss.Announcement;
 public class CentralHandler {
 	
 	@Autowired MemberService memberService;
+	@Autowired LectureService lectureService;
+	@Autowired LectureReviewManager lectureReviewManager;
 	Announcement announcement = new Announcement();
 	
 	@RequestMapping("timetable_auto")
@@ -37,8 +38,8 @@ public class CentralHandler {
 	}
 	
 	@RequestMapping("review")
-	public String review(){
-		return "review";
+	public void review(Model model){
+		model.addAttribute("list", lectureReviewManager.list());
 	}
 	
 	@RequestMapping("graduation")
@@ -47,8 +48,8 @@ public class CentralHandler {
 	}
 	
 	@RequestMapping("lecture")
-	public String lecture(){
-		return "lecture";
+	public void lecture(Model model){
+		model.addAttribute("list", lectureService.list());
 	}
 	
 	@RequestMapping("main")

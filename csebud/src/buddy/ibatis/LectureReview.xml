@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="LectureReview">
+	<typeAlias alias="LectureReview" type="buddy.review.LectureReview" />
+
+	<delete id="delete" parameterClass="Integer">
+		delete from lecturereview where reviewCode = #reviewCode#
+	</delete>
+
+	<insert id="add" parameterClass="LectureReview">
+		insert into lecturereview (reviewCode, writerId, content, writtenTime, lectureCode, lectureName, professor, starval) values(#reviewCode#, #writerId#, #content#, #writtenTime#, #lectureCode#, #professor#, #starval#)
+ 	</insert>
+ 	
+	<update id="update" parameterClass="LectureReview">
+		update lecturereview set writerId = #writerId#, content = #content#, writtenTime = #writtenTime#, lectureCode = #lectureCode#, lectureName = #lectureName#, professor = #professor#, starval = #starval# where reviewCode = #reviewCode#
+	</update>
+ 	
+	<select id="get" parameterClass="String" resultClass="LectureReview">
+		select * from lecturereview where reviewCode = #reviewCode#
+ 	</select>
+
+	<select id="list" resultClass="LectureReview">
+		select * from lecturereview order by reviewCode
+ 	</select>
+</sqlMap>

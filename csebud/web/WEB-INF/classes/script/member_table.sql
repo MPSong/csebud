@@ -1,6 +1,0 @@
-CREATE TABLE member (
-	id INTEGER PRIMARY KEY, 
-	name VARCHAR(20) NOT NULL, 
-	joined DATE,
-	jtime VARCHAR(20)
-); 
