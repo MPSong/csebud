@@ -2,14 +2,14 @@ package rule;
 
 public class Course {
 
-	protected String LectureCode;   //강의 코드
-	protected String courseMake_Up;  //재수강여부
-	protected String Grade;  //받은 등급
-	protected boolean IsEnglishCourse;  //영어강의여부
+	private String LectureCode;   //강의 코드
+	private String Credit; //학점
+	private String Grade;  //받은 등급
+	private boolean IsEnglishCourse;  //영어강의여부
 	
-	public Course(String LectureCode, String courseMake_Up, String Grade, boolean IsEnglishCourse){
+	public Course(String LectureCode, String Credit, String Grade, boolean IsEnglishCourse){
 		this.LectureCode=LectureCode;
-		this.courseMake_Up=courseMake_Up;
+		this.Credit=Credit;
 		this.Grade=Grade;
 		this.IsEnglishCourse=IsEnglishCourse;
 	}	
@@ -17,13 +17,13 @@ public class Course {
 	public String getLectureCode() {
 		return LectureCode;
 	}
+	
+	public String getCredit(){
+		return Credit;
+	}
 
 	public String getGrade() {
 		return Grade;
-	}
-	
-	public String getCourseMake_up(){
-		return courseMake_Up;
 	}
 
 	public boolean getIsEnglishCourse(){

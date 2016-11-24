@@ -26,13 +26,6 @@ public class Student {
 			ExcelRead excel=new ExcelRead();
 			courses=excel.getExcelData(filepath, tableName); //엑셀 파일을 읽어 저장한다.
 			
-			/*재수강한 적이 있다면 전에 수강한 과목은 삭제한다.*/
-			Iterator<Course> iter=courses.iterator();
-			while(iter.hasNext()){
-				Course c=iter.next();
-				if(c.courseMake_Up=="OLD재수강")
-					iter.remove();
-			}
 		}
 		else
 		{
