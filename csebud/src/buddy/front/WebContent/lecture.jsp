@@ -67,19 +67,21 @@
 
 								<!-- Content -->
 									<div class="noticebox">
-										<table class="notice_table">
+										<table class="lecture_table">
 									<thead>
 										<tr>
-											<th class="notice_th">강의코드</th>
-											<th class="notice_th">강의명</th>
-											<th class="notice_th">교수명</th>
-											<th class="notice_th">시간</th>
-											<th class="notice_th">강의실</th>
+											<td class="lecture_th" style="min-width:100px">강의코드</td>
+											<td class="lecture_th" style="min-width:200px">강의명</td>
+											<td class="lecture_th" style="min-width:100px">교수명</td>
+											<td class="lecture_th" style="min-width:300px">시간</td>
+											<td class="lecture_th" style="min-width:100px">학점</td>
+											<td class="lecture_th" style="min-width:200px">강의실</td>
 										</tr>
 									</thead>
 									<tbody>
 										
 										<tr class="notice_tr">
+											<td class="notice_td">cse4040</td>
 											<td class="notice_td"></td>
 											<td class="notice_td"></td>
 											<td class="notice_td"></td>
@@ -92,8 +94,10 @@
 											<td class="notice_td"></td>
 											<td class="notice_td"></td>
 											<td class="notice_td"></td>
+											<td class="notice_td"></td>
 										</tr>
 										<tr class="notice_tr">
+											<td class="notice_td"></td>
 											<td class="notice_td"></td>
 											<td class="notice_td"></td>
 											<td class="notice_td"></td>

@@ -1,3 +1,39 @@
+/* databox */
+.databox {
+	background: #ffffff;
+	width: 900px;
+}
+
+/* databox */
+.databox {
+	margin:auto;
+	border-radius: 10px; 
+	border: 4px; 
+	border-style: solid;
+}
+
+.databox .image.featured {
+	left: 1.75em;
+	top: 1.75em;
+	margin: -4.5em 0 4.25em -3.5em;
+}
+
+.databox.post header {
+	padding-top: 1em;
+	margin: 0 0 2em 0;
+}
+
+.databox.post h2 {
+	font-size: 2.5em;
+	letter-spacing: -0.015em;
+	text-align:center;
+}
+
+.databox.post header>p {
+	margin-top: 1.25em;
+	font-size: 1.25em;
+}
+
 strong {
 	font-weight: bold; 
 }
@@ -6,17 +42,18 @@ em {
 	font-style: italic; 
 }
 
-.lecture_table{
+.personal_table{
 	background: #ffffff;
 	border-collapse: separate;
 	box-shadow: inset 0 1px 0 #fff;
 	font-size: 14px;
 	line-height: 24px;
 	text-align: left;
-	min-width: 1000px;
+	width:800px;
+	margin:auto;
 }	
 
-.lecture_th {
+.personal_th {
 	background: linear-gradient(#777, #444);
 	border-left: 1px solid #555;
 	border-right: 1px solid #777;
@@ -31,7 +68,7 @@ em {
 	text-align:center;
 }
 
-.notice_th:after {
+.personal_th:after {
 	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
 	content: '';
 	display: block;
@@ -43,16 +80,16 @@ em {
 	width: 100%;
 }
 
-.notice_th:first-child {
+.personal_th:first-child {
 	border-left: 1px solid #777;	
 	box-shadow: inset 1px 1px 0 #999;
 }
 
-.notice_th:last-child {
+.personal_th:last-child {
 	box-shadow: inset -1px 1px 0 #999;
 }
 
-.notice_td {
+.personal_td {
 	border-right: 1px solid #fff;
 	border-left: 1px solid #e8e8e8;
 	border-top: 1px solid #fff;
@@ -62,36 +99,36 @@ em {
 	transition: all 300ms;
 }
 
-.notice_td:first-child {
+.personal_td:first-child {
 	box-shadow: inset 1px 0 0 #fff;
 }	
 
-.notice_td:last-child {
+.personal_td:last-child {
 	border-right: 1px solid #e8e8e8;
 	box-shadow: inset -1px 0 0 #fff;
 }	
 
-.notice_tr {
+.personal_tr {
 	background: url(http://jackrugile.com/images/misc/noise-diagonal.png);	
 }
 
-.notice_tr:nth-child(odd) .notice_td {
+.personal_tr:nth-child(odd) .personal_td {
 	background: #f1f1f1;	
 }
 
-.notice_tr:last-of-type td {
+.personal_tr:last-of-type td {
 	box-shadow: inset 0 -1px 0 #fff; 
 }
 
-.notice_tr:last-of-type .notice_td:first-child {
+.personal_tr:last-of-type .personal_td:first-child {
 	box-shadow: inset 1px -1px 0 #fff;
 }	
 
-.notice_tr:last-of-type .notice_td:last-child {
+.personal_tr:last-of-type .personal_td:last-child {
 	box-shadow: inset -1px -1px 0 #fff;
 }	
 
 
-.notice_tr:nth-child(odd) .notice_td {
+.personal_tr:nth-child(odd) .personal_td {
 	background: #f1f1f1;	
 }

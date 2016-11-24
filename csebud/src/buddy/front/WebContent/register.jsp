@@ -62,7 +62,7 @@
          <!-- Main -->
             <div id="main-wrapper">
                <div  class="form" style="border-radius:30px">
-               
+               <br><br>
                   <form name="Register" var="Register" method="post" action="registerProcess">
                      <div>
                      <p class="contact"><label><font size="4">ID</font></label></p> 

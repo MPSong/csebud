@@ -1168,7 +1168,7 @@ ol.default li {
 		padding: 4em 0 4em 0;
 	}
 	#footer-wrapper {
-		padding: 4em 0 4em 0;
+		padding: 4em 0 0 0;
 	}
 	#footer-wrapper header {
 		margin: 0 0 3em 0;
@@ -1385,14 +1385,6 @@ ol.default li {
 		padding-left: 2%;
 		color: #565656;
 	}
-	
-div.image {
-   width:400px;
-   height:400px;
-   background:url(../image/face.png)
-   margin:0; /* If you want no margin */
-   padding:0; /*if your want to padding */
-}
+​
 
-}
 }

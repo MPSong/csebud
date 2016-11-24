@@ -1,0 +1,9 @@
+#comparetable {width: 100%; table-layout: fixed; text-align: center; margin: 4em 0; border-collapse: collapse; }
+#comparetable tr {background: transparent!important;}
+#comparetable td,
+#comparetable th {padding: 20px; text-align: center;}
+#comparetable td.rowTitle {text-align: left;}
+.blank {background: none!important; border: none!important;}
+ .redrum th {background-color: #e25a35; font-size: 26px; color: #e9e9e9; text-align: center; font-weight: 400; text-shadow: 0 1px 0 #51251a; border: 1px solid #9fb6c8;}
+ .redrum td {background-color: #f0f1f1; border: 1px solid #c8d6e2;} 
+ .redrum td.rowTitle {border-left: 4px solid #e25a35}

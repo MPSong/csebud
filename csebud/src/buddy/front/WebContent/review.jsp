@@ -80,39 +80,78 @@
 
 							<div class="simplebox">
 								<h2 style="text-align: center">강의평가</h2>
-								<div
-									style="width: 800px; min-height: 190px; margin: auto; border-radius: 10px; border: 4px; border-style: solid">
-									<div
-										style="width: 70%; min-height: 50px; text-align: center; vertical-align: center; background-color: #d52349; float: left">
+								<div style="width: 800px; min-height: 190px; margin: auto; border-radius: 10px; border: 4px; border-style: solid">
+									<div style="width: 75%; min-height: 50px; text-align: center; vertical-align: center; background-color: #d52349; float: left; padding-top:7px;">
 										<font color="white"> 소프트웨어 공학</font>
 									</div>
-									<div
-										style="width: 30%; min-height: 50px; text-align: center; vertical-align: center; background-color: #d52349; float: right">
+									<div style="width: 25%; min-height: 50px; text-align: center; vertical-align: center; background-color: #d52349; float: right; padding-top:7px;">
 										<font color="white"> 최은만</font>
 									</div>
-									<div style="width: 70%; min-height: 40px; float: left;">
+									<div style="width: 75%; min-height: 140px; float: left;">
+										<div style="width: 75%; min-height: 40px; float: left;">
 
-										<label for="rate1">성적</label>
-										<div class="Clear" id="rate1">
-											<input class="star" type="radio" name="test-1-rating-1"
-												value="N" title="No" disabled="disabled" /> <input
-												class="star" type="radio" name="test-1-rating-1" value="M"
-												title="Maybe" disabled="disabled" /> <input class="star"
-												type="radio" name="test-1-rating-1" checked="checked"
-												disabled="disabled" />
+
+											<div>
+												<label for="test-1-rating-1">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp평가:</label>
+												<input class="star" type="radio" name="test-1-rating-1"
+													value="N" title="No" disabled="disabled" /> <input
+													class="star" type="radio" name="test-1-rating-1" value="M"
+													title="Maybe" disabled="disabled" /> <input class="star"
+													type="radio" name="test-1-rating-1" checked="checked"
+													disabled="disabled" />
+											</div>
+
 										</div>
-
+										<div style="width: 75%; min-height: 100px; float: left">
+											배울게 많고 성적도 잘주고 흥미유발도 좋고 엄청재밌고</div>
 									</div>
-									<div style="width: 70%; min-height: 100px; float: left">배울게
-										많고 성적도 잘주고 흥미유발도 좋고 엄청재밌고</div>
 
+									<div style="width: 25%; min-height: 135px; float: right; text-align: center; padding-top:10px;border-left: 4px; border-style: solid">
 									
-				
-										<div style="width: 30%; min-height: 140px; float: right">
-										<div class="image">
-										</div>
+										<div id="box1"></div>
 										작성자 xx
+									</div>
+
+
 								</div>
+								
+								<br>
+								<div style="width: 800px; min-height: 190px; margin: auto; border-radius: 10px; border: 4px; border-style: solid">
+									<div style="width: 75%; min-height: 50px; text-align: center; vertical-align: center; background-color: #d52349; float: left; padding-top:7px;">
+										<font color="white"> 소프트웨어 공학</font>
+									</div>
+									<div style="width: 25%; min-height: 50px; text-align: center; vertical-align: center; background-color: #d52349; float: right; padding-top:7px;">
+										<font color="white"> 최은만</font>
+									</div>
+									<div style="width: 75%; min-height: 140px; float: left;">
+										<div style="width: 75%; min-height: 40px; float: left;">
+
+
+											<div>
+												<label for="test-1-rating-2">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp평가:</label>
+												
+												<input
+													class="star" type="radio" name="test-1-rating-2" value="M"
+													title="Maybe" disabled="disabled" />
+													<input
+													class="star" type="radio" name="test-1-rating-2" value="M"
+													title="Maybe" disabled="disabled" /> <input class="star"
+													type="radio" name="test-1-rating-2" checked="checked"
+													disabled="disabled" />
+											</div>
+
+										</div>
+										<div style="width: 75%; min-height: 100px; float: left">
+											배울게 많고 성적도 잘주고 흥미유발도 좋고 엄청재밌고</div>
+									</div>
+
+									<div style="width: 25%; min-height: 135px; float: right; text-align: center; padding-top:10px;border-left: 4px; border-style: solid">
+									
+										<div id="box1"></div>
+										작성자 xx
+									</div>
+
+
 								</div>
 								<br> <br>
 								<div class="fp_service_box fp_c1"></div>
