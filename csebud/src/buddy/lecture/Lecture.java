@@ -29,10 +29,11 @@ public class Lecture{
 	
 	String secondClassroom;	// 강의의 두번째 수업의 강의실
 	
-	String credit;			// 강의의 학점
+	int credit;				// 강의의 학점
 	
-	String isEnglish;		// 강의의 영어강의 여부(true/false)
+	int isEnglish;			// 강의의 영어강의 여부(true/false)
 	
+	int rnum;				// 행 번호(Paging을 위한)	
 	
 	/**
 	 * @return the lectureCode
@@ -205,29 +206,43 @@ public class Lecture{
 	/**
 	 * @return the credit
 	 */
-	public String getCredit(){
+	public int getCredit(){
 		return credit;
 	}
 	
 	/**
 	 * @param credit the credit to set
 	 */
-	public void setCredit(String credit){
+	public void setCredit(int credit){
 		this.credit = credit;
 	}
 	
 	/**
 	 * @return the isEnglish
 	 */
-	public String getIsEnglish(){
+	public int getIsEnglish(){
 		return isEnglish;
 	}
 	
 	/**
 	 * @param isEnglish the isEnglish to set
 	 */
-	public void setIsEnglish(String isEnglish){
+	public void setIsEnglish(int isEnglish){
 		this.isEnglish = isEnglish;
+	}
+	
+	/**
+	 * @return the rnum
+	 */
+	public int getRnum(){
+		return rnum;
+	}
+	
+	/**
+	 * @param rnum the rnum to set
+	 */
+	public void setRnum(int rnum){
+		this.rnum = rnum;
 	}
 	
 }

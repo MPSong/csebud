@@ -1,54 +1,27 @@
 package buddy.student;
 
 import java.util.ArrayList;
-import buddy.timetable.Timetable;
-import buddy.course.Course;
 
-public class Student{
-	
+	public class Student {
 	private String studentId;
-	private String studentName;
-	private ArrayList<Integer> reviewsWritten;
-	private ArrayList<Timetable> myTimetables;
-	private int creditsTaken;
-	private ArrayList<Course> courses;
+	private int[] reviewsWritten;
+	private int creditsTaken;  // 수강한 학점
 	
-	// getter / setter 메서드
-	public String getStudentId() {
+	/*
+	private int majorEnglishCourse;  // 전공에서 영어강의 들은 횟수
+	private int liberalEnglishCourse; // 교양에서 영어강의 들은 횟수
+	private int totalEnglishCourse;  // 총 영어강의 들은 횟수
+	*/
+	
+	private ArrayList<Course> courses=new ArrayList<Course>(); // 들은 강좌를 모두 담은 ArrayList
+	
+	boolean IsExcelFile;  // 성적 엑셀 파일을 업로드했는지 여부
+	   
+	public void UpdateStudentInfo(){
+	}
+	   
+	public String getStudentID(){
 		return studentId;
 	}
-	public void setStudentId(String studentId) {
-		this.studentId = studentId;
-	}
-	public String getStudentName() {
-		return studentName;
-	}
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
-	public ArrayList<Integer> getReviewsWritten() {
-		return reviewsWritten;
-	}
-	public void setReviewsWritten(ArrayList<Integer> reviewsWritten) {
-		this.reviewsWritten = reviewsWritten;
-	}
-	public ArrayList<Timetable> getMyTimetables() {
-		return myTimetables;
-	}
-	public void setMyTimetables(ArrayList<Timetable> myTimetables) {
-		this.myTimetables = myTimetables;
-	}
-	public int getCreditsTaken() {
-		return creditsTaken;
-	}
-	public void setCreditsTaken(int creditsTaken) {
-		this.creditsTaken = creditsTaken;
-	}
-	public ArrayList<Course> getCourses() {
-		return courses;
-	}
-	public void setCourses(ArrayList<Course> courses) {
-		this.courses = courses;
-	}
-	
+   
 }

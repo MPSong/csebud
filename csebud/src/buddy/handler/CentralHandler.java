@@ -1,5 +1,10 @@
 package buddy.handler;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import buddy.member.Member;
@@ -16,6 +23,11 @@ import buddy.member.MemberService;
 import buddy.review.LectureReviewManager;
 import buddy.lecture.LectureService;
 import buddy.rss.Announcement;
+import buddy.student.Course;
+import buddy.student.ExcelRead;
+import buddy.student.Student;
+import buddy.student.StudentManager;
+import buddy.file.FileInfo;
 
 @Controller
 @RequestMapping("")
@@ -25,7 +37,9 @@ public class CentralHandler {
 	@Autowired MemberService memberService;
 	@Autowired LectureService lectureService;
 	@Autowired LectureReviewManager lectureReviewManager;
+	@Autowired StudentManager studentManager;
 	Announcement announcement = new Announcement();
+	ExcelRead excel = new ExcelRead();
 	
 	@RequestMapping("timetable_auto")
 	public String timetable_auto(){
@@ -57,11 +71,6 @@ public class CentralHandler {
 		return "main";
 	}
 	
-	@RequestMapping("personal_data")
-	public String personal_data(){
-		return "personal_data";
-	}
-	
 	@RequestMapping("register")
 	public String register(){
 		return "register";
@@ -81,6 +90,47 @@ public class CentralHandler {
 	public String upload(){
 		return "upload";
 	}
+	
+	// 학생 개인 정보 매핑 부분
+	@RequestMapping("personal_data")
+	public void personal_data(Model model){
+		
+		model.addAttribute("list", studentManager.c_list());
+		
+	}
+	
+	// 파일 업로드 처리 부분
+    @RequestMapping(value = "/excel_insert", method={RequestMethod.POST, RequestMethod.GET})
+    public String fileSubmit(HttpServletRequest request, Model model) throws IllegalStateException, IOException {
+        
+    	MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest)request;
+        Iterator<String> iterator = multipartHttpServletRequest.getFileNames();
+        MultipartFile multipartFile = null;
+        
+        while(iterator.hasNext()){
+            multipartFile = multipartHttpServletRequest.getFile(iterator.next());
+            
+            if(multipartFile.isEmpty() == false){
+            	
+            	File file = new File(multipartFile.getOriginalFilename());
+            	multipartFile.transferTo(file);
+            	ArrayList<Course> courses = excel.getExcelData("2011112428",file.getAbsolutePath());
+            	
+    			for(int i=0; i<courses.size(); i++){
+    				
+    				Course course = courses.get(i);
+    				studentManager.c_add(course);
+    				
+    			}
+            	
+            }
+        }
+
+        model.addAttribute("list", studentManager.c_list());
+        
+        return "redirect:personal_data"; // 리스트 요청으로 보내야하는데 일단 제외하고 구현
+        
+    }
 	
 	// 로그인 세션 생성 매핑
 	@RequestMapping(value="/loginProcess", method={RequestMethod.POST, RequestMethod.GET})

@@ -11,13 +11,13 @@
 	</delete>
 
 	<insert id="add" parameterClass="Lecture">
-		insert into lecture (lectureCode, division, lectureName, professor, firstWeekday, firstStartTime, firstEndTime, secondWeekday, secondStartTime, secondEndTime, firstClassroom, secondClassroom, credit, isEnglish) 
-		values(#lectureCode#, #division#, #lectureName#, #professor#, #firstWeekday#, #firstStartTime#, #firstEndTime#, #secondWeekday#, #secondStartTime#, #secondEndTime#, #firstClassroom#, #secondClassroom#, #credit#, #isEnglish#)
+		insert into lecture (lectureCode, division, lectureName, professor, firstWeekday, firstStartTime, firstEndTime, secondWeekday, secondStartTime, secondEndTime, firstClassroom, secondClassroom, credit, isEnglish, rnum) 
+		values(#lectureCode#, #division#, #lectureName#, #professor#, #firstWeekday#, #firstStartTime#, #firstEndTime#, #secondWeekday#, #secondStartTime#, #secondEndTime#, #firstClassroom#, #secondClassroom#, #credit#, #isEnglish#, #rnum#)
  	</insert>
  	
 	<update id="update" parameterClass="Lecture">
 		update lecture set division = #division#, lectureName = #lectureName#, professor = #professor#, firstWeekday = #firstWeekday#, firstStartTime = #firstStartTime#, firstEndTime = #firstEndTime# 
-		secondWeekday = #secondWeekday#, secondStartTime = #secondStartTime#, secondEndTime = #secondEndTime#, firstClassroom = #firstClassroom#, secondClassroom = #secondClassroom#, credit = #credit#, isEnglish = #isEnglish# where lectureCode = #lectureCode#
+		secondWeekday = #secondWeekday#, secondStartTime = #secondStartTime#, secondEndTime = #secondEndTime#, firstClassroom = #firstClassroom#, secondClassroom = #secondClassroom#, credit = #credit#, isEnglish = #isEnglish#, rnum = #rnum# where lectureCode = #lectureCode#
 	</update>
  	
 	<select id="get" parameterClass="String" resultClass="Lecture">
