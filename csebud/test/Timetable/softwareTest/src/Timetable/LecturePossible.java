@@ -31,4 +31,8 @@ public class LecturePossible {
 		this.Credit=Credit;
 		this.priority=priority;
 	}
+	
+	public void setPriority(int priority){
+		this.priority=priority;
+	}
 }

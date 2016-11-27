@@ -12,13 +12,13 @@ public class TimetableFactory {
 	private ArrayList<Integer> temp_index=new ArrayList<Integer>(); //알고리즘 중 index를 저장하는 부분
 	private ArrayList<Integer> temp_Credit=new ArrayList<Integer>(); //알고리즘 중 max_credit을 저장하는 부분
 	
-	public ArrayList<Timetable> makeTimetable(ArrayList<LecturePossible> lecturePossible, int max_credit){
-		
+	public void makeTimetable(ArrayList<LecturePossible> lecturePossible, int max_credit){
 		
 		this.lecturePossible=lecturePossible;
 		
 		int priorityNum=1; //우선순위 1부터 시작한다.
 		int index_count=0; //우선순위에 있는 index를 카운트하기 위함
+		
 		for(int i=0; i<lecturePossible.size()-1; i++){  //우선순위 인덱스를 담을 반복문
 			index_count++; //인덱스 카운트
 			if(lecturePossible.get(i+1).priority==(priorityNum+1))
@@ -29,43 +29,58 @@ public class TimetableFactory {
 				priorityNum++;
 			}
 		}
+		/*마지막꺼 담는다.*/
+		IsPriorityIn.add(false); //우선순위 
+		priorityIndex.add(index_count+1); //인덱스 저장
 		
 		priorityNum=1; //다시 1로 초기화
+		
+		for(int i=0; i<priorityIndex.size(); i++){ //for test
+			System.out.println(priorityIndex.get(i));
+		}
 		
 		//분반을 몇에서 시작하느냐에 따라 결과가 다르다.
 		//한 번 집어넣을때마다 새로운 클래스에 집어넣고 마지막 인덱스를 return한다.
 		//리턴한 결과를 가지고 count가 안되면 다시 getLecture에 집어넣는다. 이를 통해 모든 브랜치의 시간표를 생성한다.
 		Timetable temp_table=new Timetable();
+		
 		timetable.add(temp_table);
 		temp_index.add(0);
 		temp_Credit.add(0);
-		getLecture(timetable.get(0), priorityNum, 0, max_credit);
+		//getLecture(timetable.get(0), priorityNum, 0, max_credit);
 		
+		//timetable.get(0).print(); //for test
 		//test필요
+		/*
 		for(int i=1; i<timetable.size(); i++){
 			getLecture(timetable.get(i), lecturePossible.get(temp_index.get(i)).priority, temp_index.get(i), temp_Credit.get(i));
 		}
 		//여기까지
 		//너무 우선순위에서 벗어날 경우 지워주는 알고리즘 작성해야함
-		return timetable;
+		//getLecture를 두개로 나눠서 일정 우선순위가 넘어가면 test필요 부분이 지워진 메소드가 필요함
+		 */
+		
+		
+		//return timetable;
 		
 		
 	}
 	
 	private void getLecture(Timetable temp_table, int priorityNum, int index, int credit){
-		if((credit<3)&&!IsPriorityIn.get(priorityNum-1)){
+		if((credit>=3)&&!IsPriorityIn.get(priorityNum-1)){
 			if(isTableEmpty(temp_table, index)){  //이번 우선순위에서 안 들어갔으면, count!=0, 테이블이 비었으면,
+				/*
 				//test필요
 				if((priorityNum+1)!=(lecturePossible.get(index+1).priority)){ //우선순위의 마지막 인덱스가 아니라면,
 					timetable.add(temp_table); //지금까지 진행된 timetable을 임시로 집어넣는다.
 					temp_index.add(index+1);
 					temp_Credit.add(credit);
-				}
+				}*/
 				//여기까지
 				putTable(temp_table, index);
 				IsPriorityIn.set(priorityNum-1, true);
 				int temp_credit=lecturePossible.get(index).Credit;
-				getLecture(temp_table, priorityNum+1, index-Integer.parseInt(lecturePossible.get(index).LectureInfo)+1+priorityIndex.get(priorityNum-1), credit-temp_credit); //다음 우선순위로 진입				
+				getLecture(temp_table, priorityNum+1, index-Integer.parseInt(lecturePossible.get(index).Division)+1+priorityIndex.get(priorityNum-1), credit-temp_credit); //다음 우선순위로 진입				
 			}
 			else{ //이번 인덱스가 못들어간다면,
 				if((priorityNum+1)==(lecturePossible.get(index+1).priority)){ //우선순위의 마지막 인덱스라면,
