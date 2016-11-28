@@ -445,7 +445,7 @@ form label {
 }
 
 form input[type=text], form input[type=email], form input[type=password],
-	form select, form textarea {
+	form select{
 	-webkit-appearance: none;
 	display: block;
 	border: 0;
@@ -462,9 +462,6 @@ form input[type=text]:focus, form input[type=email]:focus, form input[type=passw
 	box-shadow: inset 0px 0px 1px 1px #43bff0;
 }
 
-form textarea {
-	height: 15em;
-}
 
 form .formerize-placeholder {
 	color: #555 !important;

@@ -70,3 +70,40 @@ margin:auto;
   width: 140px;
   text-align: left;
  }
+ 
+ #lecturelist{
+ width:100%;   
+}
+
+#lecture option{
+  width:100%;   
+}
+
+form textarea
+{
+	width:80%;
+	overflow:hidden;
+	height:100px;
+}
+
+form button
+{
+	font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #018dc8;
+  width: 100px;
+  height:50px;
+  border: 0;
+  padding: 0px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+form button:hover,form button:active,form button:focus {
+  background: #43A047;
+}
+
+form input[type="text"] { width:50px; height: 30px;; display:inline-block;}
