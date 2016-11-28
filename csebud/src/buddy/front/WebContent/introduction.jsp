@@ -17,7 +17,7 @@
 					<table id="topnav">
 					<tr><td>
 					<ul>
-						<li><a href="main.jsp">HOME</a></li><li class="line1">|</li>
+						<li><a href="main.jsp">로그인</a></li><li class="line1">|</li>
 						<li><a href="register.jsp">회원가입</a></li>
 					</ul>
 					</td></tr>
@@ -29,18 +29,12 @@
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
-									<li class="current">
-										<a href="introduction.jsp">사이트공지</a>
-										<ul>
-											<li><a href="introduction.jsp">사이트설명</a></li>
-											<li><a href="notice.jsp">개발자공지</a></li>
-										</ul>
-									</li>
+									<li>
+										<a href="lecture.jsp">강의정보</a></li>
 									<li><a href="timetable.jsp">시간표작성</a>
 										<ul>
 											<li><a href="timetable.jsp">시간표 작성</a></li>
 											<li><a href="timetable_auto.jsp">시간표 자동작성</a></li>
-											<li><a href="lecture.jsp">강의정보</a></li>
 										</ul>
 									</li>
 									<li><a href="personal_data.jsp">학사관리</a>

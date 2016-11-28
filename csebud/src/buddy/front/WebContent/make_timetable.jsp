@@ -1,0 +1,259 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<html>
+<head>
+<style type="text/css">
+.tftable {
+	font-size:6px;
+	color:#E6E6E6;
+	width:420px;
+	border-width: 1px;
+	border-color: #F5ECCE;
+	border-collapse: collapse;
+	empty-cell:true;
+	table-layout:fixed;
+	word-break:break-all;
+}
+.tftable th {
+	font-size:12px;
+	font-weight:bold;
+	background-color:#1C1C1C;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #F5ECCE;
+	text-align:center;
+	width:100px;
+}
+.tftable tr {
+	background-color:#E6E6E6;
+	height:5px;
+	
+}
+.tftable td {
+	font-size:5px;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #BDBDBD;
+	text-align:center;
+}
+.tftable td:hover {
+	background-color:#ffffff;
+}
+</style>
+</head>
+<body>
+<table class="tftable" border="1">
+<tr>
+	<th></th>
+	<th>월</th>
+	<th>화</th>
+	<th>수</th>
+	<th>목</th>
+	<th>금</th>
+</tr>
+<tr>
+	<th>09:00~09:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+
+</tr>
+<tr>
+	<th>09:00~09:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+
+</tr>
+<tr>
+	<th>09:30~10:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<th>10:00~10:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>10:30~11:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<th>11:00~10:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>11:30~11:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>12:00~12:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>12:30~13:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>13:00~13:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>13:30~14:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>14:00~14:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>14:30~15:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>15:00~15:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>15:30~16:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>16:00~16:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>16:30~17:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>17:00~17:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>17:30~18:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>18:00~18:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>18:30~19:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>19:00~19:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>19:30~20:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>20:00~20:30</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>	
+	<th>20:30~21:00</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</table>
+</body>
+</html>

@@ -22,7 +22,7 @@
 						<tr>
 							<td>
 								<ul>
-									<li><a href="main.jsp">HOME</a></li>
+									<li><a href="main.jsp">로그인</a></li>
 									<li class="line1">|</li>
 									<li><a href="register.jsp">회원가입</a></li>
 								</ul>
@@ -32,22 +32,18 @@
 				</div>
 				<!-- Logo -->
 				<h1>
-					<a href="main.jsp">컴공벗</a>
+					
+					<a href="main.jsp"><img src="image\logo.png" style="width: 100%; vertical-align: middle; width:1287px" /></a>
 				</h1>
 
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li><a href="introduction.jsp">사이트공지</a>
-							<ul>
-								<li><a href="introduction.jsp">사이트설명</a></li>
-								<li><a href="notice.jsp">개발자공지</a></li>
-							</ul></li>
+						<li><a href="lecture.jsp">강의정보</a></li>
 						<li><a href="timetable.jsp">시간표작성</a>
 							<ul>
 								<li><a href="timetable.jsp">시간표 작성</a></li>
 								<li><a href="timetable_auto.jsp">시간표 자동작성</a></li>
-								<li><a href="lecture.jsp">강의정보</a></li>
 							</ul></li>
 						<li><a href="personal_data.jsp">학사관리</a>
 							<ul>
@@ -72,7 +68,7 @@
 						<div class="noticebox">
 							<div style="float: right">
 								<form action="" method="">
-									<input type="search" id="search">
+									<input type="search" id="search" style="height: 44px;">
 									<button id="button">Search</button>
 								</form>
 							</div>
@@ -80,11 +76,14 @@
 
 							<div class="simplebox">
 								<h2 style="text-align: center">강의평가</h2>
-								<div style="width: 800px; min-height: 190px; margin: auto; border-radius: 10px; border: 4px; border-style: solid">
-									<div style="width: 75%; min-height: 50px; text-align: center; vertical-align: center; background-color: #d52349; float: left; padding-top:7px;">
+								<div
+									style="width: 800px; min-height: 190px; margin: auto; border-radius: 10px; border: 4px; border-style: solid">
+									<div
+										style="width: 75%; min-height: 50px; text-align: center; vertical-align: center; background-color: #018dc8; float: left; padding-top: 7px;">
 										<font color="white"> 소프트웨어 공학</font>
 									</div>
-									<div style="width: 25%; min-height: 50px; text-align: center; vertical-align: center; background-color: #d52349; float: right; padding-top:7px;">
+									<div
+										style="width: 25%; min-height: 50px; text-align: center; vertical-align: center; background-color: #018dc8; float: right; padding-top: 7px;">
 										<font color="white"> 최은만</font>
 									</div>
 									<div style="width: 75%; min-height: 140px; float: left;">
@@ -106,21 +105,25 @@
 											배울게 많고 성적도 잘주고 흥미유발도 좋고 엄청재밌고</div>
 									</div>
 
-									<div style="width: 25%; min-height: 135px; float: right; text-align: center; padding-top:10px;border-left: 4px; border-style: solid">
-									
+									<div
+										style="width: 25%; min-height: 135px; float: right; text-align: center; padding-top: 10px; border-left: 4px; border-style: solid">
+
 										<div id="box1"></div>
 										작성자 xx
 									</div>
 
 
 								</div>
-								
+
 								<br>
-								<div style="width: 800px; min-height: 190px; margin: auto; border-radius: 10px; border: 4px; border-style: solid">
-									<div style="width: 75%; min-height: 50px; text-align: center; vertical-align: center; background-color: #d52349; float: left; padding-top:7px;">
+								<div
+									style="width: 800px; min-height: 190px; margin: auto; border-radius: 10px; border: 4px; border-style: solid">
+									<div
+										style="width: 75%; min-height: 50px; text-align: center; vertical-align: center; background-color: #018dc8; float: left; padding-top: 7px;">
 										<font color="white"> 소프트웨어 공학</font>
 									</div>
-									<div style="width: 25%; min-height: 50px; text-align: center; vertical-align: center; background-color: #d52349; float: right; padding-top:7px;">
+									<div
+										style="width: 25%; min-height: 50px; text-align: center; vertical-align: center; background-color: #018dc8; float: right; padding-top: 7px;">
 										<font color="white"> 최은만</font>
 									</div>
 									<div style="width: 75%; min-height: 140px; float: left;">
@@ -129,11 +132,9 @@
 
 											<div>
 												<label for="test-1-rating-2">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp평가:</label>
-												
-												<input
-													class="star" type="radio" name="test-1-rating-2" value="M"
-													title="Maybe" disabled="disabled" />
-													<input
+
+												<input class="star" type="radio" name="test-1-rating-2"
+													value="M" title="Maybe" disabled="disabled" /> <input
 													class="star" type="radio" name="test-1-rating-2" value="M"
 													title="Maybe" disabled="disabled" /> <input class="star"
 													type="radio" name="test-1-rating-2" checked="checked"
@@ -145,8 +146,9 @@
 											배울게 많고 성적도 잘주고 흥미유발도 좋고 엄청재밌고</div>
 									</div>
 
-									<div style="width: 25%; min-height: 135px; float: right; text-align: center; padding-top:10px;border-left: 4px; border-style: solid">
-									
+									<div
+										style="width: 25%; min-height: 135px; float: right; text-align: center; padding-top: 10px; border-left: 4px; border-style: solid">
+
 										<div id="box1"></div>
 										작성자 xx
 									</div>
@@ -189,73 +191,29 @@
 
 	<!-- Footer -->
 	<div id="footer-wrapper">
-		<section id="footer" class="container">
-			<div class="row">
-				<div class="8u 12u(mobile)">
-					<section>
-						<header>
-							<h2>버전업데이트 정보</h2>
-						</header>
-						<ul class="dates">
-							<li><span class="date">Jan <strong>27</strong></span>
-								<h3>
-									<a href="#">Lorem dolor sit amet veroeros</a>
-								</h3>
-								<p>Ipsum dolor sit amet veroeros consequat blandit ipsum
-									phasellus lorem consequat etiam.</p></li>
-							<li><span class="date">Jan <strong>27</strong></span>
-								<h3>
-									<a href="#">Lorem dolor sit amet veroeros</a>
-								</h3>
-								<p>Ipsum dolor sit amet veroeros consequat blandit ipsum
-									phasellus lorem consequat etiam.</p></li>
-						</ul>
-					</section>
-				</div>
-				<div class="4u 12u(mobile)">
-					<section>
-						<header>
-							<h2>제작자정보</h2>
-						</header>
+		<center>
+			<a
+				href="https://docs.google.com/forms/d/e/1FAIpQLSfu63k-5rEBTpbtX8yQCQ-S404QwmTiezaHoJhAxsvuR8eicA/viewform"
+				target="_blank">사용만족도 조사에 참여해주세요!</a>
+		</center>
 
-						<ul class="contact">
-							<li>
-								<h3>Address</h3>
-								<p>주소</p>
-							</li>
-							<li>
-								<h3>Mail</h3>
-								<p>
-									<a href="#">문의 이메일</a>
-								</p>
-							</li>
-							<li>
-								<h3>Phone</h3>
-								<p>전화번호 넣는곳</p>
-							</li>
-						</ul>
-					</section>
+		<div style="min-width: 1100px">
+			<div class="12u">
+
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul class="links">
+						<li>&copy;컴공벗</li>
+						<li>컴공벗조</li>
+					</ul>
 				</div>
+
 			</div>
-			<div class="row">
-				<div class="12u">
-
-					<!-- Copyright -->
-					<div id="copyright">
-						<ul class="links">
-							<li>&copy;컴공벗</li>
-							<li>컴공벗조</li>
-						</ul>
-					</div>
-
-				</div>
-			</div>
-
-		</section>
+		</div>
 
 	</div>
 
-	</div>
+
 
 	<!-- Scripts -->
 	<script src="js\jquery.min.js"></script>

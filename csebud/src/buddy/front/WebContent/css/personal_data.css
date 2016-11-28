@@ -1,12 +1,12 @@
 /* databox */
 .databox {
 	background: #ffffff;
-	width: 900px;
+	width: 50%;
 }
 
 /* databox */
 .databox {
-	margin:auto;
+	
 	border-radius: 10px; 
 	border: 4px; 
 	border-style: solid;
@@ -49,9 +49,12 @@ em {
 	font-size: 14px;
 	line-height: 24px;
 	text-align: left;
-	width:800px;
+	min-width:480px;
 	margin:auto;
+	height:100px;
+	overflow:scroll;
 }	
+
 
 .personal_th {
 	background: linear-gradient(#777, #444);
@@ -132,3 +135,13 @@ em {
 .personal_tr:nth-child(odd) .personal_td {
 	background: #f1f1f1;	
 }
+
+
+
+
+select { 
+	text-align-last:center; 
+	}
+	
+	
+	

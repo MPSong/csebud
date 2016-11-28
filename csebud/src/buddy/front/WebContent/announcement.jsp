@@ -15,13 +15,12 @@
 		<!-- Header -->
 		<div id="header-wrapper">
 			<div id="header">
-
 				<div style="min-width: 1200px;">
 					<table id="topnav">
 						<tr>
 							<td>
 								<ul>
-									<li><a href="main.jsp">HOME</a></li>
+									<li><a href="main.jsp">로그인</a></li>
 									<li class="line1">|</li>
 									<li><a href="register.jsp">회원가입</a></li>
 								</ul>
@@ -31,22 +30,19 @@
 				</div>
 				<!-- Logo -->
 				<h1>
-					<a href="main.jsp">컴공벗</a>
+					
+					<a href="main.jsp"><img src="image\logo.png" style="width: 100%; vertical-align: middle; width:1287px" /></a>
 				</h1>
 
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li><a href="introduction.jsp">사이트공지</a>
-							<ul>
-								<li><a href="introduction.jsp">사이트설명</a></li>
-								<li><a href="notice.jsp">개발자공지</a></li>
-							</ul></li>
+						<li><a href="lecture.jsp">강의정보</a>
+							</li>
 						<li><a href="timetable.jsp">시간표작성</a>
 							<ul>
 								<li><a href="timetable.jsp">시간표 작성</a></li>
 								<li><a href="timetable_auto.jsp">시간표 자동작성</a></li>
-								<li><a href="lecture.jsp">강의정보</a></li>
 							</ul></li>
 						<li><a href="personal_data.jsp">학사관리</a>
 							<ul>
@@ -141,56 +137,12 @@
 
 		<!-- Footer -->
 		<div id="footer-wrapper">
-			<section id="footer" class="container">
-				<div class="row">
-					<div class="8u 12u(mobile)">
-						<section>
-							<header>
-								<h2>버전업데이트 정보</h2>
-							</header>
-							<ul class="dates">
-								<li><span class="date">Jan <strong>27</strong></span>
-									<h3>
-										<a href="#">Lorem dolor sit amet veroeros</a>
-									</h3>
-									<p>Ipsum dolor sit amet veroeros consequat blandit ipsum
-										phasellus lorem consequat etiam.</p></li>
-								<li><span class="date">Jan <strong>27</strong></span>
-									<h3>
-										<a href="#">Lorem dolor sit amet veroeros</a>
-									</h3>
-									<p>Ipsum dolor sit amet veroeros consequat blandit ipsum
-										phasellus lorem consequat etiam.</p></li>
-							</ul>
-						</section>
-					</div>
-					<div class="4u 12u(mobile)">
-						<section>
-							<header>
-								<h2>제작자정보</h2>
-							</header>
+			<center>
+				<a
+					href="https://docs.google.com/forms/d/e/1FAIpQLSfu63k-5rEBTpbtX8yQCQ-S404QwmTiezaHoJhAxsvuR8eicA/viewform"
+					target="_blank">사용만족도 조사에 참여해주세요!</a></center>
 
-							<ul class="contact">
-								<li>
-									<h3>Address</h3>
-									<p>주소</p>
-								</li>
-								<li>
-									<h3>Mail</h3>
-									<p>
-										<a href="#">문의 이메일</a>
-									</p>
-								</li>
-								<li>
-									<h3>Phone</h3>
-									<p>전화번호 넣는곳</p>
-								</li>
-							</ul>
-						</section>
-					</div>
-				</div>
-
-				<div class="row">
+				<div style="min-width: 1100px">
 					<div class="12u">
 
 						<!-- Copyright -->
@@ -203,7 +155,7 @@
 
 					</div>
 				</div>
-			</section>
+			
 		</div>
 
 	</div>
