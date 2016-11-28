@@ -18,6 +18,7 @@ public class TimetableGenerator{
 	private ArrayList<LecturePossible> lecturePossible; // 실제 알고리즘을 적용할 강의들
 	private int max_credit; //최대로 들을 credit(사용자로 부터 받는다.)
 	private int Major_count; //필수과목의 계수를 담는 변수
+	private int first_priority_num;
 
 	RegulationManager donggukRM;  //regulation을 총괄하는 곳
 	
@@ -26,19 +27,20 @@ public class TimetableGenerator{
 		lecturePossible=new ArrayList<LecturePossible>();
 		timetable=new ArrayList<Timetable>();
 		factory=new TimetableFactory();
+		first_priority_num=0;
 	}
 
-	public void CreatePossibleLecture() { // Lecture을 LecturePossible에 집어넣는 메소드
-		Major_count=match_Regulation_to_Lecture(); // Lecture에서 강의를 뽑는다.
+	public void CreatePossibleLecture(String filename, String regulation_num) { // Lecture을 LecturePossible에 집어넣는 메소드
+		Major_count=match_Regulation_to_Lecture(filename, regulation_num); // Lecture에서 강의를 뽑는다.
 		setPriority(Major_count); // 우선순위를 설정한다.
 	}
 
-	private int match_Regulation_to_Lecture() {// Regulation에서 안 들은 강의를 받아 Lecture에서 강의를 뽑아있는지 비교하는 메소드
+	private int match_Regulation_to_Lecture(String filename, String regulation_num) {// Regulation에서 안 들은 강의를 받아 Lecture에서 강의를 뽑아있는지 비교하는 메소드
 		//Regulation에서 과목 코드와 
 		
 		//여기부터 TEST파일
 		rule.ExcelRead excel = new rule.ExcelRead(); //엑셀 읽는 부분
-		String ExcelFileName="2012.xlsx"; //성적 파일 이름
+		String ExcelFileName=filename; //성적 파일 이름
 	    List<Course> cl = excel.getExcelData(ExcelFileName, null); //성적 엑셀을 읽는다.
 	    
 	    /*전체 과목정보를 읽어오는 부분*/
@@ -49,7 +51,7 @@ public class TimetableGenerator{
 	    int Major_Count=0; //필수과목에서 전공 개수를 저장한다.
 	    
 	    //2012에서 Regulation을 가져온다, 필수과목만
-	    List<Lecture> un = donggukRM.findRegulation("2012").unMeetLectureList(cl, "must"); 
+	    List<Lecture> un = donggukRM.findRegulation(regulation_num).unMeetLectureList(cl, "must"); 
 	    for(int i=0; i<un.size(); i++){
 	    	String temp_Code=un.get(i).getLectureCode(); //강의 코드를 받아온다.
 	    	for(int j=0; j<Semester_Lecture.size(); j++){ //Lecture를 받아서 처리
@@ -62,14 +64,13 @@ public class TimetableGenerator{
 	    					Semester_Lecture.get(j).FirstEndTime, Semester_Lecture.get(j).SecondWeek,
 	    					Semester_Lecture.get(j).SecondStartTime, Semester_Lecture.get(j).SecondEndTime, 
 	    					Semester_Lecture.get(j).Credit, 0)); //Possible에 넣는 부분
-	    			System.out.println(Semester_Lecture.get(j).LectureInfo);
 	    			//break;
 	    		}
 	    		
 	    	}
 	    }
 
-	    un = donggukRM.findRegulation("2012").unMeetLectureList(cl, "select"); //선택 필수과목만
+	    un = donggukRM.findRegulation(regulation_num).unMeetLectureList(cl, "select"); //선택 필수과목만
 	    for(int i=0; i<un.size(); i++){
 	    	String temp_Code=un.get(i).getLectureCode(); //강의 코드를 받아온다.
 	    	for(int j=0; j<Semester_Lecture.size(); j++){ //Lecture를 받아서 처리
@@ -79,15 +80,14 @@ public class TimetableGenerator{
 	    					Semester_Lecture.get(j).FirstEndTime, Semester_Lecture.get(j).SecondWeek,
 	    					Semester_Lecture.get(j).SecondStartTime, Semester_Lecture.get(j).SecondEndTime, 
 	    					Semester_Lecture.get(j).Credit, 1)); //Possible에 넣는 부분
-	    			System.out.println(Semester_Lecture.get(j).LectureInfo);
 	    			//break;
 	    		}
 	    	}
 	    }
 	      
-	    if(donggukRM.findRegulation("2012").getMscMath() > donggukRM.findRegulation("2012").MeetCredit(cl, "mscMath")) //수학과목
+	    if(donggukRM.findRegulation(regulation_num).getMscMath() > donggukRM.findRegulation(regulation_num).MeetCredit(cl, "mscMath")) //수학과목
 	    {
-	    	un = donggukRM.findRegulation("2012").unMeetLectureList(cl, "mscMath");
+	    	un = donggukRM.findRegulation(regulation_num).unMeetLectureList(cl, "mscMath");
 	    	for(int i =0 ; i<un.size();i++ )
 	    	{
 	    		String temp_Code=un.get(i).getLectureCode(); //강의 코드를 받아온다.
@@ -98,7 +98,6 @@ public class TimetableGenerator{
 		    					Semester_Lecture.get(j).FirstEndTime, Semester_Lecture.get(j).SecondWeek,
 		    					Semester_Lecture.get(j).SecondStartTime, Semester_Lecture.get(j).SecondEndTime, 
 		    					Semester_Lecture.get(j).Credit, 2)); //Possible에 넣는 부분
-		    			System.out.println(Semester_Lecture.get(j).LectureInfo);
 		    			//break;
 		    		}
 		    	}
@@ -106,8 +105,8 @@ public class TimetableGenerator{
 	    	  
 	    }
 	    
-	    if(donggukRM.findRegulation("2012").getMscScience() > donggukRM.findRegulation("2012").MeetCredit(cl, "mscScience")){//과학과목
-		      un = donggukRM.findRegulation("2012").unMeetLectureList(cl, "mscScience");
+	    if(donggukRM.findRegulation(regulation_num).getMscScience() > donggukRM.findRegulation(regulation_num).MeetCredit(cl, "mscScience")){//과학과목
+		      un = donggukRM.findRegulation(regulation_num).unMeetLectureList(cl, "mscScience");
 		      for(int i =0 ; i<un.size();i++ )
 		      {
 		    	  String temp_Code=un.get(i).getLectureCode(); //강의 코드를 받아온다.
@@ -118,7 +117,6 @@ public class TimetableGenerator{
 			    					Semester_Lecture.get(j).FirstEndTime, Semester_Lecture.get(j).SecondWeek,
 			    					Semester_Lecture.get(j).SecondStartTime, Semester_Lecture.get(j).SecondEndTime, 
 			    					Semester_Lecture.get(j).Credit, 2)); //Possible에 넣는 부분
-			    			System.out.println(Semester_Lecture.get(j).LectureInfo);
 			    			//break;
 			    		}
 			    	}
@@ -181,14 +179,23 @@ public class TimetableGenerator{
 			}
 		}
 		
+		for(int i=0; i<lecturePossible.size(); i++){
+			if(lecturePossible.get(i).priority==1){ //첫 번째 우선순위 개수를 카운트한다.
+				first_priority_num++;
+			}
+			else if(lecturePossible.get(i).priority==2)
+				break;
+		}
+		
+
 		for(int i=0; i<lecturePossible.size(); i++){ //test
 			System.out.println(lecturePossible.get(i).LectureInfo+" "+lecturePossible.get(i).priority);
 		}
-
+		
 	}
 
 	public void autoGenerateTimetable() { // 타임테이블을 생성한다.
-		factory.makeTimetable(lecturePossible, max_credit);
+		timetable=factory.makeTimetable(lecturePossible, max_credit, first_priority_num);
 	}
 	
 	public void setCredit_max(int max_credit){ //최대로 들을 학점 set

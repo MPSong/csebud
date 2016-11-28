@@ -12,7 +12,7 @@ public class TimetableFactory {
 	private ArrayList<Integer> temp_index=new ArrayList<Integer>(); //알고리즘 중 index를 저장하는 부분
 	private ArrayList<Integer> temp_Credit=new ArrayList<Integer>(); //알고리즘 중 max_credit을 저장하는 부분
 	
-	public void makeTimetable(ArrayList<LecturePossible> lecturePossible, int max_credit){
+	public ArrayList<Timetable> makeTimetable(ArrayList<LecturePossible> lecturePossible, int max_credit, int first_priority_num){
 		
 		this.lecturePossible=lecturePossible;
 		
@@ -35,21 +35,25 @@ public class TimetableFactory {
 		
 		priorityNum=1; //다시 1로 초기화
 		
-		for(int i=0; i<priorityIndex.size(); i++){ //for test
-			System.out.println(priorityIndex.get(i));
-		}
-		
-		//분반을 몇에서 시작하느냐에 따라 결과가 다르다.
 		//한 번 집어넣을때마다 새로운 클래스에 집어넣고 마지막 인덱스를 return한다.
 		//리턴한 결과를 가지고 count가 안되면 다시 getLecture에 집어넣는다. 이를 통해 모든 브랜치의 시간표를 생성한다.
-		Timetable temp_table=new Timetable();
+
+		for(int i=0; i<first_priority_num; i++){
+			timetable.add(i, new Timetable());
+			temp_index.add(0);
+			temp_Credit.add(0);
+			getLecture(timetable.get(i), priorityNum, i, max_credit);
+			for(int j=0; j<IsPriorityIn.size(); j++){  //IsPriorityIn 초기화
+				IsPriorityIn.set(j, false);
+			}
+		}
 		
-		timetable.add(temp_table);
-		temp_index.add(0);
-		temp_Credit.add(0);
-		//getLecture(timetable.get(0), priorityNum, 0, max_credit);
+		//첫번째 우선순위에서는 모든 인덱스를 다 넣어준다.
+		for(int i=0; i<timetable.size(); i++){ //for test
+			timetable.get(i).print();
+			System.out.println("");
+		}
 		
-		//timetable.get(0).print(); //for test
 		//test필요
 		/*
 		for(int i=1; i<timetable.size(); i++){
@@ -61,7 +65,7 @@ public class TimetableFactory {
 		 */
 		
 		
-		//return timetable;
+		return timetable;
 		
 		
 	}
@@ -70,13 +74,14 @@ public class TimetableFactory {
 		if((credit>=3)&&!IsPriorityIn.get(priorityNum-1)){
 			if(isTableEmpty(temp_table, index)){  //이번 우선순위에서 안 들어갔으면, count!=0, 테이블이 비었으면,
 				/*
-				//test필요
+				//일단 test는 완료
 				if((priorityNum+1)!=(lecturePossible.get(index+1).priority)){ //우선순위의 마지막 인덱스가 아니라면,
-					timetable.add(temp_table); //지금까지 진행된 timetable을 임시로 집어넣는다.
+					timetable.add(new Timetable(temp_table)); //지금까지 진행된 timetable을 임시로 집어넣는다.
 					temp_index.add(index+1);
 					temp_Credit.add(credit);
-				}*/
+				}
 				//여기까지
+				 */
 				putTable(temp_table, index);
 				IsPriorityIn.set(priorityNum-1, true);
 				int temp_credit=lecturePossible.get(index).Credit;
@@ -123,19 +128,24 @@ public class TimetableFactory {
 	
 	//시간에 따라 시간표에 들어갈 행을 지정해주는 메소드
 	private int getTableRow(String time) {
-		int temp=Integer.parseInt(time);
-		int index=1;
-		for(int i=900; i<=2100; ){
-			if((i+30)>temp&&temp>=i){
-				break;
+		if(!time.equals("")){
+			int temp=Integer.parseInt(time);
+			int index=1;
+			for(int i=900; i<=2100; ){
+				if((i+30)>temp&&temp>=i){
+					break;
+				}
+				index++;
+				if((i%100)==0)
+					i+=30;
+				else
+					i+=70;
 			}
-			index++;
-			if((i%100)==0)
-				i+=30;
-			else
-				i+=70;
+			return index;
 		}
-		return index;
+		else{
+			return -1;
+		}
 	}
 
 	//강의 시간에 따라 시간표에 들어갈 열을 지정해주는 메소드
