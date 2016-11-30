@@ -1,4 +1,4 @@
-
+package db.lecture;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -28,6 +28,7 @@ public class LectureInfo_ExcelRead {
 	
 	private int Credit; //학점
 	private boolean IsEnglish; //영어강의 여부
+	private int rnum; // 행 번호
 
 	public ArrayList<LectureCourse> getExcelData(String filepath, String tableName) {
 		ArrayList<LectureCourse> tempLecture=new ArrayList<LectureCourse>();
@@ -67,18 +68,11 @@ public class LectureInfo_ExcelRead {
 					}
 					else temp_IsEnglishCourse=false;
 					
-					
-					//for test
-					/*System.out.print(LectureInfo+" "+Division+" "+LectureName+" "+Professor+" "
-							+FirstWeek+" "+FirstStartTime+" "+FirstEndTime+" "+SecondWeek+" "
-							+SecondStartTime+" "+SecondEndTime+" "+FirstClassroom+" "+SecondClassroom+" "
-							+Credit+" "+EnglishCourse);	*/
-					
 					//객체에 쓰는 부분
 					if(temp_Campus.equals("서울")){
 						LectureCourse temp=new LectureCourse(LectureInfo, Division, LectureName, Professor, 
 								FirstWeek, FirstStartTime, FirstEndTime, SecondWeek, SecondStartTime, SecondEndTime,
-								FirstClassroom, SecondClassroom, Credit, IsEnglish );
+								FirstClassroom, SecondClassroom, Credit, IsEnglish, rnum );
 						tempLecture.add(temp);
 					}
 					else
@@ -225,34 +219,4 @@ public class LectureInfo_ExcelRead {
 		}
 	}
 	
-	/*
-	 * public static List<String> writeToMysql(String filepath, String
-	 * tableName) {
-	 * 
-	 * List<String> sqls = new ArrayList(); try {
-	 * 
-	 * FileInputStream input = new FileInputStream(filepath); XSSFWorkbook
-	 * workbook = new XSSFWorkbook(input);
-	 * 
-	 * int rowindex = 0; int columnindex = 0;
-	 * 
-	 * XSSFSheet sheet = workbook.getSheetAt(0); // �뻾�쓽 �닔 int rows =
-	 * sheet.getPhysicalNumberOfRows(); // row 泥ル쾲吏몃뒗 �젣紐⑹쓣 �굹���궡誘�濡� �떎�젣
-	 * �뜲�씠�꽣�씤 1遺��꽣 �씫�뒗�떎. for (rowindex = 0; rowindex < rows; rowindex++) {
-	 * // �뻾�쓣�씫�뒗�떎 XSSFRow row = sheet.getRow(rowindex); if (row != null) { //
-	 * ���쓽 �닔 int cells = row.getPhysicalNumberOfCells(); List<XSSFCell>
-	 * cellList = new ArrayList(); // sqㅣ에 학수강좌번호(G), 등급(L), 재수강구분(N), 원어강의종류(V)
-	 * String sql = "INSERT INTO " + tableName + " VALUES ('"; for (columnindex
-	 * = 0; columnindex < cells; columnindex++) {
-	 * 
-	 * if (columnindex > 0) { sql = sql + "','"; } sql = sql +
-	 * row.getCell(columnindex).toString();
-	 * 
-	 * } sql = sql + "')"; System.out.println(sql); sqls.add(sql); } }
-	 * 
-	 * input.close(); System.out.println("Success import excel to mysql table");
-	 * } catch (Exception e) { e.printStackTrace(System.out); }
-	 * 
-	 * return sqls; }
-	 */
 }
