@@ -72,11 +72,34 @@ margin:auto;
  }
  
  #lecturelist{
- width:100%;   
+ width:755px;   
+ height:50px;
+ 
+  appearance: none;
+ background: url(../image/select_long.png) width:100%;  /* 화살표 모양의 이미지 */  
 }
 
 #lecture option{
   width:100%;   
+}
+.scorelist{
+-webkit-appearance: none;  /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  -ms-appearance:none;
+  appearance: none;
+  background: url(../image/select.jpg) no-repeat right 100px;  /* 화살표 모양의 이미지 */    
+ width:100px;   
+ display:inline-block;
+ overflow:hidden;
+}
+
+.scorelist option{
+  width:100%;   
+  -webkit-appearance: none;  /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../image/select.jpg) no-repeat 95% 50%;  /* 화살표 모양의 이미지 */   
+ display:inline-block
 }
 
 form textarea
@@ -103,7 +126,15 @@ form button
   cursor: pointer;
 }
 form button:hover,form button:active,form button:focus {
-  background: #43A047;
+  background: #e53359;
+  
 }
 
 form input[type="text"] { width:50px; height: 30px;; display:inline-block;}
+
+.ul li{
+	display:inline-block;
+	display: -moz-inline-stack;
+	vertical-align:top;
+}
+

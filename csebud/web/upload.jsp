@@ -18,12 +18,17 @@ function checkFileType(filePath){      /*파일의 타입을 체크하는 기능
  var fileLen = filePath.length;   
  var fileFormat = filePath.substring(fileLen - 4);   
  fileFormatfileFormat = fileFormat.toLowerCase();   
+ if(fileFormatfileFormat == "xlsx") {
+	 return true;
+ }else{
+	 return false;
+ }
   
 }   
 </script>  
  
 <body>
-<form action="excel_insert.jsp" name="upload" method="POST" enctype="multipart/form-data">
+<form action="excel_insert" name="upload" method="POST" enctype="multipart/form-data">
 <td><input type="file" name="file1" size="20" align="absmiddle" />    </td>     <!--  파일업로드하는 바를 구현한 부분입니다-->
 <td><a onclick="checkForm();" style="cursor:hand"> [전송] </a></td>       <!--  업로드한 파일을 전송하는 부분입니다-->
 <br><br>

@@ -139,7 +139,8 @@ em {
 
 
 
-select { 
+form select { 
+	width:30%;
 	text-align-last:center; 
 	}
 	

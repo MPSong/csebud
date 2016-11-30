@@ -48,30 +48,14 @@ table.graduation{
     font-weight: bold;
     line-height: 1.4em;
     font-style: normal;
-    border-collapse:separate;
+    border-collapse:collapse;
 }
 
 .graduation thead th, tbody th{
     padding:15px;
     color:#fff;
     text-shadow:1px 1px 1px #568F23;
-    border:1px solid #93CE37;
-    border-bottom:3px solid #9ED929;
-    background-color:#9DD929;
-    background:-webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(0.02, rgb(123,192,67)),
-        color-stop(0.51, rgb(139,198,66)),
-        color-stop(0.87, rgb(158,217,41))
-        );
-    background: -moz-linear-gradient(
-        center bottom,
-        rgb(123,192,67) 2%,
-        rgb(139,198,66) 51%,
-        rgb(158,217,41) 87%
-        );
+    background-color:#018dc8
     -webkit-border-top-left-radius:5px;
     -webkit-border-top-right-radius:5px;
     -moz-border-radius:5px 5px 0px 0px;
@@ -79,8 +63,11 @@ table.graduation{
     border-top-right-radius:5px;
 }
 
+.graduation tbody th{
+    width:150px;
+}
+
 .graduation thead th:empty{
-    background:transparent;
     border:none;
 }
 
@@ -104,16 +91,48 @@ table.graduation{
     -webkit-border-radius:2px;
     border-radius:2px;
     color:#666;
-    text-shadow:1px 1px 1px #fff;
+    
 }
 
 
-.info{
-	width: 70%; height: 100px; margin: auto;
+table.info{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4em;
+    font-style: normal;
+    width:350px;
+    margin:0 auto;
+    border-collapse : collapse
 }
-.info td{
-    border:1px solid black;
+
+.info tbody th{
+    color:#fff;
+    text-shadow:1px 1px 1px #568F23;
+    background-color:#018dc8
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius:5px 5px 0px 0px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    height:10px;
+    padding : 5px;
 }
+
+.info tbody td{
+    text-align:center;
+    background-color:white;
+    border: 0.5px solid black;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    color:#666;
+    padding:5;
+}
+
+
+
+
 
 .lecture_table{
 	background: #ffffff;
@@ -208,5 +227,8 @@ table.graduation{
 .lecture_tr:nth-child(odd) .lecture_td {
 	background: #f1f1f1;	
 }
-
+button
+{
+	background-color:#018dc8;
+}
 

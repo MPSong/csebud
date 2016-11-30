@@ -1,0 +1,45 @@
+form{
+	width:350px;
+	margin:0 auto;
+}
+
+form input[type=text]
+	{
+	-webkit-appearance: none;
+	display: inline-block;
+	border: 0;
+	padding: 0.75em 1em;
+	font-size: 1em;
+	border-radius: 5px;
+	border: solid 1px #dddddd;
+	background: #fff;
+	width: 200px;
+	height:50px;
+}
+
+form input[type=button]
+{
+	 display: inline-block;
+	 background-color:#018dc8;
+	 height:50px;
+	 width:50px;
+	 text-align:center;
+	 padding:0;
+	 font-size:10;
+}
+
+
+
+.ul li{
+	display:inline-block;
+	display: -moz-inline-stack;
+	vertical-align:top;
+}
+button
+{
+	width:150px;
+	height:50px;
+	background-color:#018dc8;
+	padding:0;
+	text-align:center;
+}
