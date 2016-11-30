@@ -11,11 +11,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelRead {
 
 	private String temp_LectureCode;
+	private String temp_LectureName;
+	private String temp_Professor;
 	private String temp_courseMake_Up;
 	private String temp_Credit;
 	private String temp_Grade;
 	private int temp_IsEnglishCourse;
-	private StudentManager studentManager;
 
 	public ArrayList<Course> getExcelData(String studentId, String filepath) {
 
@@ -34,8 +35,11 @@ public class ExcelRead {
 					int totalCell = row.getPhysicalNumberOfCells(); // 셀의 수를 읽는다.
 
 					temp_LectureCode = getCellValue(row, 6); // 학수강좌번호
+					temp_LectureName = getCellValue(row, 8); // 강의명
+					temp_Professor = getCellValue(row, 9); // 교수명
 					temp_courseMake_Up = getCellValue(row, 13); // 재수강구분
 					temp_Credit = getCellValue(row, 10); // 학점
+					temp_Credit = temp_Credit.substring(0, 1);
 					temp_Grade = getCellValue(row, 11); // 등급
 					String EnglishCourse = getCellValue(row, 21); // 원어강의종류
 					if(temp_courseMake_Up.equals("OLD재수강"))
@@ -51,6 +55,8 @@ public class ExcelRead {
 						Course course = new Course();
 						course.setStudentId(studentId);
 						course.setLectureCode(temp_LectureCode);
+						course.setLectureName(temp_LectureName);
+						course.setProfessor(temp_Professor);
 						course.setCredit(temp_Credit);
 						course.setGrade(temp_Grade);
 						course.setIsEnglishCourse(temp_IsEnglishCourse);
@@ -99,16 +105,6 @@ public class ExcelRead {
 		}
 		return value;
 
-	}
-	
-	public static void main(String[] args) {
-		
-		ExcelRead excelRead = new ExcelRead();
-		ArrayList<Course> courses = excelRead.getExcelData("2011112428", "src/yang_grade.xlsx");
-		for(int i=0; i<courses.size(); i++){
-			System.out.println(courses.get(i).getStudentId()+courses.get(i).getLectureCode()+courses.get(i).getCredit()+courses.get(i).getGrade()+courses.get(i).getIsEnglishCourse());
-		}
-		
 	}
 
 }

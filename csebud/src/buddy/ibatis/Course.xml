@@ -11,11 +11,11 @@
 	</delete>
 
 	<insert id="add" parameterClass="Course">
-		insert into course (studentId, lectureCode, credit, grade, isEnglishCourse) values(#studentId#, #lectureCode#, #credit#, #grade#, #isEnglishCourse#)
+		insert into course (studentId, lectureCode, lectureName, professor, credit, grade, isEnglishCourse) values(#studentId#, #lectureCode#, #lectureName#, #professor#, #credit#, #grade#, #isEnglishCourse#)
  	</insert>
  	
 	<update id="update" parameterClass="Course">
-		update course set lectureCode = #lectureCode#, credit = #credit#, grade = #grade#, isEnglishCourse = #isEnglishCourse# where studentId = #studentId#
+		update course set lectureCode = #lectureCode#, lectureName = #lectureName#, professor = #professor#, credit = #credit#, grade = #grade#, isEnglishCourse = #isEnglishCourse# where studentId = #studentId#
 	</update>
  	
 	<select id="get" parameterClass="String" resultClass="Course">

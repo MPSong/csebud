@@ -17,6 +17,8 @@ public class Member {
 	
 	String email;
 	
+	String studentId;
+	
 	/**
 	 * @return the id
 	 */
@@ -85,6 +87,20 @@ public class Member {
 	 */
 	public void setEmail(String email){
 		this.email = email;
+	}
+	
+	/**
+	 * @return the email
+	 */
+	public String getStudentId(){
+		return studentId;
+	}
+	
+	/**
+	 * @param studentId the studentId to set
+	 */
+	public void setStudentId(String studentId){
+		this.studentId = studentId;
 	}
 	
 }

@@ -11,11 +11,11 @@
 	</delete>
 
 	<insert id="add" parameterClass="Member">
-		insert into member (id, pass, name, phone, email) values(#id#, #pass#, #name#, #phone#, #email#)
+		insert into member (id, pass, name, phone, email, studentId) values(#id#, #pass#, #name#, #phone#, #email#, #studentId#)
  	</insert>
  	
 	<update id="update" parameterClass="Member">
-		update member set pass = #pass#, name = #name#, phone = #phone#, email = #email# where id = #id#
+		update member set pass = #pass#, name = #name#, phone = #phone#, email = #email#, studentId = #studentId# where id = #id#
 	</update>
  	
 	<select id="get" parameterClass="String" resultClass="Member">

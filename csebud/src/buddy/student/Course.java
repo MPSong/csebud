@@ -7,15 +7,19 @@ import javax.persistence.Id;
 public class Course {
 	
 	@Id
-	String studentId;
+	String studentId;	// 강의를 수강한 학생의 학번
 	
-	String lectureCode;
+	String lectureCode;	// 해당되는 강의의 학수번호
 	
-	String credit;
+	String lectureName;	// 해당되는 강의의 강의명
 	
-	String grade;
+	String professor;	// 해당되는 강의의 교수명
 	
-	int isEnglishCourse;
+	String credit;		// 해당되는 강의의 학점
+	
+	String grade;		// 해당되는 강의의 등급
+	
+	int isEnglishCourse;// 해당되는 강의의 영어강의 유무
 	
 	/**
 	 * @return the studentId
@@ -43,6 +47,34 @@ public class Course {
 	 */
 	public void setLectureCode(String lectureCode){
 		this.lectureCode = lectureCode;
+	}
+	
+	/**
+	 * @return the lectureName
+	 */
+	public String getLectureName(){
+		return lectureName;
+	}
+	
+	/**
+	 * @param lectureName the lectureName to set
+	 */
+	public void setLectureName(String lectureName){
+		this.lectureName = lectureName;
+	}
+	
+	/**
+	 * @return the professor
+	 */
+	public String getProfessor(){
+		return professor;
+	}
+	
+	/**
+	 * @param professor the professor to set
+	 */
+	public void setProfessor(String professor){
+		this.professor = professor;
 	}
 	
 	/**
@@ -88,43 +120,3 @@ public class Course {
 	}
 	
 }
-
-/*package buddy.student;
-
-public class Course {
-
-	private String StudentId;	// 해당 강의목록을 가지는 학생의 학번
-	private String LectureCode;   //강의 코드
-	private String Credit; //학점
-	private String Grade;  //받은 등급
-	private boolean IsEnglishCourse;  //영어강의여부
-	   
-	public Course(String StudentId, String LectureCode, String Credit, String Grade, boolean IsEnglishCourse){
-		this.StudentId = StudentId;
-		this.LectureCode = LectureCode;
-		this.Credit = Credit;
-		this.Grade = Grade;
-		this.IsEnglishCourse = IsEnglishCourse;
-	}   
-	      
-	public String getStudentId() {
-		return StudentId;
-	}
-	
-	public String getLectureCode() {
-		return LectureCode;
-	}
-	   
-	public String getCredit(){
-		return Credit;
-	}
-	
-	public String getGrade() {
-		return Grade;
-	}
-	
-	public boolean getIsEnglishCourse(){
-		return IsEnglishCourse;
-	}
-	   
-}*/

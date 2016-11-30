@@ -1,0 +1,140 @@
+input[type="button"], input[type="submit"], input[type="reset"], button,
+	.button {
+	-webkit-appearance: none;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	border: 0;
+	border-radius: 5px;
+	background: #d52349;
+	color: #fff !important;
+	font-weight: 700;
+	outline: 0;
+	-moz-transition: background-color .25s ease-in-out;
+	-webkit-transition: background-color .25s ease-in-out;
+	-ms-transition: background-color .25s ease-in-out;
+	transition: background-color .25s ease-in-out;
+}
+
+	button:hover {
+	background: #e53359;
+}
+
+	button:active{
+	background: #c51349;
+}
+
+	button.alt {
+	background: #252122;
+}
+
+	button.alt:hover{
+	background: #353132;
+}
+
+	button.alt:active{
+	background: #151112;
+}
+
+
+button
+{
+	width:150px;
+	height:50px;
+	background-color:#018dc8;
+	padding:0;
+	text-align:center;
+}
+.timetable_table{
+	background: #ffffff;
+	border-collapse: separate;
+	box-shadow: inset 0 1px 0 #fff;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: left;
+	width:300px;
+	margin:auto;
+	height:100px;
+	overflow:scroll;
+}	
+
+
+.timetable_th {
+	background: linear-gradient(#777, #444);
+	border-left: 1px solid #555;
+	border-right: 1px solid #777;
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #333;
+	box-shadow: inset 0 1px 0 #999;
+	color: #fff;
+    font-weight: bold;
+	padding: 10px 15px;
+	position: relative;
+	text-shadow: 0 1px 0 #000;	
+	text-align:center;
+}
+
+.timetable_th:after {
+	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+	content: '';
+	display: block;
+	height: 25%;
+	left: 0;
+	margin: 1px 0 0 0;
+	position: absolute;
+	top: 25%;
+	width: 100%;
+}
+
+.timetable_th:first-child {
+	border-left: 1px solid #777;	
+	box-shadow: inset 1px 1px 0 #999;
+}
+
+.timetable_th:last-child {
+	box-shadow: inset -1px 1px 0 #999;
+}
+
+.timetable_td {
+	border-right: 1px solid #fff;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 10px 15px;
+	position: relative;
+	transition: all 300ms;
+}
+
+.timetable_td:first-child {
+	box-shadow: inset 1px 0 0 #fff;
+}	
+
+.timetable_td:last-child {
+	border-right: 1px solid #e8e8e8;
+	box-shadow: inset -1px 0 0 #fff;
+}	
+
+.timetable_tr {
+	background: url(http://jackrugile.com/images/misc/noise-diagonal.png);	
+}
+
+.timetable_tr:nth-child(odd) .timetable_td {
+	background: #f1f1f1;	
+}
+
+.timetable_tr:last-of-type td {
+	box-shadow: inset 0 -1px 0 #fff; 
+}
+
+.timetable_tr:last-of-type .timetable_td:first-child {
+	box-shadow: inset 1px -1px 0 #fff;
+}	
+
+.timetable_tr:last-of-type .timetable_td:last-child {
+	box-shadow: inset -1px -1px 0 #fff;
+}	
+
+
+.timetable_tr:nth-child(odd) .timetable_td {
+	background: #f1f1f1;	
+}

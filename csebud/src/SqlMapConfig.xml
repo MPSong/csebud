@@ -7,7 +7,9 @@
 	<settings useStatementNamespaces="true" />
 	<sqlMap resource="buddy/ibatis/Member.xml" />
 	<sqlMap resource="buddy/ibatis/Lecture.xml" />
+	<sqlMap resource="buddy/ibatis/LectureInfo.xml" />
 	<sqlMap resource="buddy/ibatis/LectureReview.xml" />
 	<sqlMap resource="buddy/ibatis/StudentInfo.xml" />
 	<sqlMap resource="buddy/ibatis/Course.xml" />
+	<sqlMap resource="buddy/ibatis/RegulationInfo.xml" />
 </sqlMapConfig>

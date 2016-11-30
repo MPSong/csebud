@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="RegulationInfo">
+	<typeAlias alias="RegulationInfo" type="buddy.regulation.RegulationInfo" />
+
+	<delete id="delete" parameterClass="String">
+		delete from regulation where year = #year#
+	</delete>
+
+	<insert id="add" parameterClass="RegulationInfo">
+		insert into regulation (year, gross, msc_gross, msc_math, msc_science, msc_process, major_gross, major_design, english_major, english_gross, common, prime, basic) 
+		values(#year#, #gross#, #msc_gross#, #msc_math#, #msc_science#, #msc_process#, #major_gross#, #major_design#, #english_major#, #english_gross#, #common#, #prime#, #basic#)
+ 	</insert>
+ 	
+	<update id="update" parameterClass="RegulationInfo">
+		update regulation set gross = #gross#, msc_gross = #msc_gross#, msc_math = #msc_math#, msc_science = #msc_science#, msc_process = #msc_process#, major_gross = #major_gross#, 
+		major_design = #major_design#, english_major = #english_major#, english_gross = #english_gross#, common = #common#, prime = #prime#, basic = #basic# where year = #year#
+	</update>
+ 	
+	<select id="get" parameterClass="String" resultClass="RegulationInfo">
+		select * from regulation where year = #year#
+ 	</select>
+
+	<select id="list" resultClass="RegulationInfo">
+		select * from regulation order by year
+ 	</select>
+</sqlMap>

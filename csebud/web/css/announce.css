@@ -1,0 +1,120 @@
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+
+.announce_table{
+	background: #ffffff;
+	border-collapse: separate;
+	box-shadow: inset 0 1px 0 #fff;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: left;
+	width:800px;
+	margin:auto;
+	height:100px;
+	overflow:scroll;
+	color:black;
+}	
+
+
+.announce_th {
+	background: linear-gradient(#777, #444);
+	border-left: 1px solid #555;
+	border-right: 1px solid #777;
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #333;
+	box-shadow: inset 0 1px 0 #999;
+	color: #fff;
+    font-weight: bold;
+	padding: 10px 15px;
+	position: relative;
+	text-shadow: 0 1px 0 #000;	
+	text-align:center;
+}
+
+.announce_th:after {
+	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+	content: '';
+	display: block;
+	height: 25%;
+	left: 0;
+	margin: 1px 0 0 0;
+	position: absolute;
+	top: 25%;
+	width: 100%;
+}
+
+.announce_th:first-child {
+	border-left: 1px solid #777;	
+	box-shadow: inset 1px 1px 0 #999;
+}
+
+.announce_th:last-child {
+	box-shadow: inset -1px 1px 0 #999;
+}
+
+.announce_td {
+	border-right: 1px solid #fff;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 10px 15px;
+	position: relative;
+	transition: all 300ms;
+}
+
+.announce_td:first-child {
+	box-shadow: inset 1px 0 0 #fff;
+}	
+
+.announce_td:last-child {
+	border-right: 1px solid #e8e8e8;
+	box-shadow: inset -1px 0 0 #fff;
+}	
+
+.announce_tr {
+	background: url(http://jackrugile.com/images/misc/noise-diagonal.png);	
+}
+
+.announce_tr:nth-child(odd) .personal_td {
+	background: #f1f1f1;	
+}
+
+.announce_tr:last-of-type td {
+	box-shadow: inset 0 -1px 0 #fff; 
+}
+
+.announce_tr:last-of-type .announce_td:first-child {
+	box-shadow: inset 1px -1px 0 #fff;
+}	
+
+.announce_tr:last-of-type .announce_td:last-child {
+	box-shadow: inset -1px -1px 0 #fff;
+}	
+
+
+.announce_tr:nth-child(odd) .announce_td {
+	background: #f1f1f1;	
+}
+
+.announce_table a, a:link{
+	text-decoration:none;
+	color:black;
+}
+.announce_table tfoot td{
+    color: black;
+    font-size:20px;
+    text-align:right;
+    padding:3px 0px;
+    text-shadow:1px 1px 1px #444;
+}
+.announce_table tfoot a:hover{
+	font-size:30px;
+	color:red;
+}
+

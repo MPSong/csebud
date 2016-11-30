@@ -1,0 +1,140 @@
+strong {
+	font-weight: bold; 
+}
+
+em {
+	font-style: italic; 
+}
+
+
+
+ a.review:link { color: red; text-decoration: none;}
+ a.review:visited { color: black; text-decoration: none;}
+ a.review:hover { color: blue; text-decoration: none;}
+ 
+ .fp_service { 
+	width: 400px; 
+	background: #262424; 
+	border: 1px solid #333232; 
+	padding: 9px 9px 4px; 
+	color: #ccc; 
+}
+
+.fp_service_box { 
+	padding: 10px 10px 0; 
+}
+.fp_c1 { 
+	background: #868686;
+}
+.tooplate_paging { 
+	margin: 0 0 20px; 
+	padding: 0; 
+}
+
+.tooplate_paging ul { 
+	margin: 0; 
+	padding: 0; 
+	list-style: none; 
+}
+
+.tooplate_paging ul li { 
+	margin: 0; 
+	padding: 0; 
+	display: inline; 
+}
+
+.tooplate_paging ul li a { 
+	float: left; 
+	display: block; 
+	color: #999; 
+	text-decoration: none; 
+	margin-right: 5px; 
+	padding: 5px 10px; 
+}
+
+.tooplate_paging ul li a:hover { 
+	color: #000;  
+}
+#rate {
+   margin-top:1000px; /* If you want no margin */
+   padding:1000px; /*if your want to padding */
+}
+#box1{ background-image:url(../image/face_.jpg);
+width:70px;
+height:70px;
+margin:auto;
+
+}
+	label {
+  display: inline-block;
+  width: 140px;
+  text-align: left;
+ }
+ 
+ #lecturelist{
+ width:755px;   
+ height:50px;
+ 
+  appearance: none;
+ background: url(../image/select_long.png) width:100%;  /* 화살표 모양의 이미지 */  
+}
+
+#lecture option{
+  width:100%;   
+}
+.scorelist{
+-webkit-appearance: none;  /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  -ms-appearance:none;
+  appearance: none;
+  background: url(../image/select.jpg) no-repeat right 100px;  /* 화살표 모양의 이미지 */    
+ width:100px;   
+ display:inline-block;
+ overflow:hidden;
+}
+
+.scorelist option{
+  width:100%;   
+  -webkit-appearance: none;  /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../image/select.jpg) no-repeat 95% 50%;  /* 화살표 모양의 이미지 */   
+ display:inline-block
+}
+
+form textarea
+{
+	width:80%;
+	overflow:hidden;
+	height:100px;
+}
+
+form button
+{
+	font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #018dc8;
+  width: 100px;
+  height:50px;
+  border: 0;
+  padding: 0px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+form button:hover,form button:active,form button:focus {
+  background: #e53359;
+  
+}
+
+form input[type="text"] { width:50px; height: 30px;; display:inline-block;}
+
+.ul li{
+	display:inline-block;
+	display: -moz-inline-stack;
+	vertical-align:top;
+}
+
