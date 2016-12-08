@@ -3,14 +3,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="css\style.css" />
 <link rel="stylesheet" href="css\loginstyle.css" />
 <link rel="stylesheet" href="css\graduation.css" />
+
+<script language="javascript">
+	function popup() {
+		var url = "recommend";
+		var title = "testpop";
+		var status = "toolbar=no,directories=no,scrollbars=no,resizable=no,status=no,menubar=no,width=400, height=400, top=0,left=20";
+		window.open(url, title, status);
+	}
+</script>
+
+
 </head>
 <body class="right-sidebar">
+
 	<div id="page-wrapper">
 
 		<!-- Header -->
@@ -46,8 +59,9 @@
 				</div>
 				<!-- Logo -->
 				<h1>
-					
-					<h1><a href="main"><img src="image\logo.jpg" style="width: 100%; vertical-align: middle; width:1200px" /></a></h1>
+
+					<a href="main"><img src="image\logo.jpg"
+						style="width: 100%; vertical-align: middle; width: 1200px" /></a>
 				</h1>
 
 				<!-- Nav -->
@@ -73,82 +87,70 @@
 		</div>
 
 		<!-- Main -->
+	<c:choose>
+
+	<c:when test="${not empty sessionScope.userLoginInfo}">
 		<div id="main-wrapper">
 			<div class="container">
 				<div class="row">
 					<div class="12u">
 
 						<!-- Content -->
-						<div class="databox" style="float: left; height: 900px">
+						<div class="databox" style="float: left; height: 700px">
 							<div
 								style="width: 100%; text-align: center; padding-top: 20px; float: left">
-								<h2>비교</h2>
+								<h2>졸업요건과 내 정보 비교</h2>
 							</div>
 							<div style="width: 100%; padding: 100px 20px 20px 20px;">
 								<table class="graduation">
 									<thead>
 										<tr>
-											<th></th>
-											<th scope="col">졸업요건</th>
-											<th scope="col">내 정보</th>
+											<th height=60px></th>
+											<th scope="col" bgcolor="#018dc8">졸업요건</th>
+											<th scope="col" bgcolor="#018dc8">내 정보</th>
 
 										</tr>
 									</thead>
-									<tfoot>
-										<tr>
-											<th scope="row" width=150px>졸업가능 여부</th>
-											<td></td>
-											<td></td>
-										</tr>
-									</tfoot>
 									<tbody>
 										<tr>
-											<th scope="row" width=130px bgcolor="red">이수학점</th>
+											<th scope="row" width=130px height=60px bgcolor="#018dc8">이수학점</th>
 											<td>${reg.gross}</td>
 											<td>${myreg.gross}</td>
 
 										</tr>
 										<tr>
-											<th scope="row" width=130px bgcolor="red">총 MSC 학점</th>
+											<th scope="row" width=130px height=60px bgcolor="#018dc8">총 MSC 학점</th>
 											<td>${reg.mscGross}</td>
 											<td>${myreg.mscGross}</td>
 
 										</tr>
 										<tr>
-											<th scope="row" width=130px bgcolor="red">MSC수학 학점</th>
-											<td>${reg.mscMath}</td>
-											<td>${myreg.mscMath}</td>
-
+											<th scope="row" width=130px height=60px bgcolor="#018dc8">영어교양</th>
+											<td>${reg.englishGross} (개)</td>
+											<td>${myreg.englishGross} (개)</td>
 										</tr>
 										<tr>
-											<th scope="row" width=130px bgcolor="red">MSC 과학 학점</th>
-											<td>${reg.mscScience}</td>
-											<td>${myreg.mscScience}</td>
-
+											<th scope="row" width=130px height=60px bgcolor="#018dc8">전공영어</th>
+											<td>${reg.englishMajor} (개)</td>
+											<td>${myreg.englishMajor} (개)</td>
 										</tr>
 										<tr>
-											<th scope="row" width=130px bgcolor="red">MSC 전산 학점</th>
-											<td>${reg.mscProcess}</td>
-											<td>${myreg.mscProcess}</td>
-
+											<th scope="row" width=130px height=60px bgcolor="#018dc8">기초교양</th>
+											<td>${reg.common}</td>
+											<td>${myreg.common}</td>
 										</tr>
 										<tr>
-											<th scope="row" width=130px bgcolor="red">총 교양 학점</th>
-											<td>${reg.cultural}</td>
-											<td>${myreg.cultural}</td>
-										</tr>
-										<tr>
-											<th scope="row" width=130px bgcolor="red">일반 교양 학점</th>
-											<td>${reg.cultural}</td>
-											<td>${myreg.cultural}</td>
-										</tr>
-										<tr>
-											<th scope="row" width=130px bgcolor="red">기본 소양 학점</th>
+											<th scope="row" width=130px height=60px bgcolor="#018dc8">기본소양</th>
 											<td>${reg.basic}</td>
 											<td>${myreg.basic}</td>
 										</tr>
 										<tr>
-											<th scope="row" width=130px bgcolor="red">총 전공 학점</th>
+											<th scope="row" width=130px height=60px bgcolor="#018dc8">일반교양</th>
+											<td>28</td>
+											<td>${myreg.cultural}</td>
+										</tr>
+										<tr>
+											<th scope="row" width=130px height=60px bgcolor="#018dc8">총 전공 학점</th>
 											<td>${reg.majorGross}</td>
 											<td>${myreg.majorGross}</td>
 										</tr>
@@ -159,7 +161,7 @@
 						</div>
 
 
-						<div class="databox" style="float: right; height: 300px;">
+						<div class="databox" style="float: right; height: 320px;">
 							<div style="padding: 25px 25px 50px 25px; text-align: center;">
 								<h2>내 정보</h2>
 								<br>
@@ -167,31 +169,41 @@
 									<table class="info">
 										<tbody>
 											<tr>
-												<td bgcolor="black" width=30% align=center border="1"><font
-													color="white">이름</font></td>
-												<td bgcolor="white" width=70%>${sessionScope.userLoginInfo.name}</td>
+												<th scope="row" width=130px bgcolor="#018dc8" height=10px>이름</th>
+												<td>${sessionScope.userLoginInfo.name}</td>
 											</tr>
 											<tr>
-												<td bgcolor="black" width=30% align=center><font
-													color="white">학번</font></td>
-												<td bgcolor="white" width=70%>${sessionScope.userLoginInfo.studentId}</td>
+												<th scope="row" width=130px bgcolor="#018dc8">학번</th>
+												<td>${sessionScope.userLoginInfo.studentId}</td>
 											</tr>
+											<tr>
+												<th scope="row" width=130px bgcolor="#018dc8">학기수</th>
+												<td>${sinfo.semester}</td>
+											</tr>
+											<tr>
+												<th scope="row" width=130px bgcolor="#018dc8">영어트랙</th>
+												<td>${sinfo.englishTrack}</td>
+											</tr>											
 										</tbody>
 									</table>
 								</div>
+								<br>
+								<center>
+									<button onclick="javascript:popup(this.form);">추천강의 확인</button>
+								</center>
 							</div>
 						</div>
 						<div class="databox" style="float: right; height: 600px;">
 							<div style="padding: 50px 25px 50px 25px; text-align: center;">
 								<h2>필수과목</h2>
 								<br>
-								<div style="width:100%; height:150px; overflow-y:auto">
+								<div style="width: 100%; height: 175px; overflow-y: auto">
 									<table class="lecture_table" style="width: 100%;">
 										<thead>
 											<tr class="lecture_tr">
 												<td class="lecture_th" style="width: 50%">강의명</td>
 												<td class="lecture_th" style="width: 25%">강의코드</td>
-												<td class="lecture_th" style="width: 25%">강의유형</td>
+												<td class="lecture_th" style="width: 25%">교수</td>
 											</tr>
 										</thead>
 										<tbody>
@@ -230,20 +242,20 @@
 											</tr>
 											
 											</c:forEach>
-
+											
 										</tbody>
 									</table>
 								</div>
 								<br>
 								<h2>선택필수</h2>
 								<br>
-								<div style="width:100%; height:200px; overflow-y:auto">
+								<div style="width: 100%; height: 175px; overflow-y: auto">
 									<table class="lecture_table" style="width: 100%;">
 										<thead>
 											<tr class="lecture_tr">
 												<td class="lecture_th" style="width: 50%">강의명</td>
 												<td class="lecture_th" style="width: 25%">강의코드</td>
-												<td class="lecture_th" style="width: 25%">강의유형</td>
+												<td class="lecture_th" style="width: 25%">교수</td>
 											</tr>
 										</thead>
 										<tbody>
@@ -287,10 +299,14 @@
 									</table>
 								</div>
 							</div>
-							
 						</div>
 
-						<br><br><br>
+						<div class="databox" style="float: left; height: 220px;padding:20px">
+						<h2>MSC란?</h2>
+						<br>
+						MSC는 대학학문기초과목으로  공과대학은 총 세종류(수학과학전산)
+						으로 분류한다. 컴퓨터공학은 공과대소속으로 학년별 최저이수조건을 세 분류에맞게 이수하여야한다
+						</div>
 
 					</div>
 
@@ -298,29 +314,58 @@
 
 			</div>
 		</div>
+		</c:when>
+		<c:otherwise>
+		<div id="main-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="12u">
+
+						<!-- Content -->
+						<div style="min-width:1100px; height: 900px; background-color:white;">
+						<br><br>
+						<center><div>
+							<img src="image/sorry.png"></div>
+							<font face="Impact, Charcoal, sans-serif" color="black" size="50"><h1>Sorry,<br><br> Please, Login First!!</h1></font>
+							<br><br><br>
+							<input type="button" value="메인페이지로" onclick="location.href='main.jsp'";>
+						</div>
+						
+						</center>
+
+					</div>
+
+				</div>
+			</div>
+		</div>		
+		</c:otherwise>
+		</c:choose>
 
 		<!-- Footer -->
 		<div id="footer-wrapper"><br>
 			<center>
-				<a href="https://docs.google.com/forms/d/e/1FAIpQLSfu63k-5rEBTpbtX8yQCQ-S404QwmTiezaHoJhAxsvuR8eicA/viewform"
-					target="_blank">사용만족도 조사에 참여해주세요!</a></center>
+				<a
+					href="https://docs.google.com/forms/d/e/1FAIpQLSfu63k-5rEBTpbtX8yQCQ-S404QwmTiezaHoJhAxsvuR8eicA/viewform"
+					target="_blank">사용만족도 조사에 참여해주세요!</a>
+			</center>
 
-				<div style="min-width: 1100px">
-					<div class="12u">
+			<div style="min-width: 1100px">
+				<div class="12u">
 
-						<!-- Copyright -->
-						<div id="copyright">
-							<ul class="links">
-								<li>Copyright &copy; 2016 By <b>team buddy</b> All Rights Reserved</li>
-							</ul>
-						</div>
-
+					<!-- Copyright -->
+					<div id="copyright">
+						<ul class="links">
+							<li>&copy;컴공벗</li>
+							<li>컴공벗조</li>
+						</ul>
 					</div>
+
 				</div>
-			
+			</div>
+
 		</div>
 		<div style="position: fixed; bottom: 50px; right: 80px;">
-			<a href="#header-wrapper"> <img src="image/top.jpg" title="위로 가기"
+			<a href="#header-wrapper"> <img src="image/top.png" title="위로 가기"
 				width="50px"; ></a>
 		</div>
 	</div>

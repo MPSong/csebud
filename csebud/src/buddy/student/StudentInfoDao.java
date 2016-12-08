@@ -19,8 +19,8 @@ public class StudentInfoDao {
 		sqlMapClientTemplate.update("StudentInfo.update", studentInfo);	
 	}
 	
-	public StudentInfo get(String studentId){
-		return (StudentInfo) sqlMapClientTemplate.queryForObject("StudentInfo.get", studentId);
+	public StudentInfo get(String memberId){
+		return (StudentInfo) sqlMapClientTemplate.queryForObject("StudentInfo.get", memberId);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -28,8 +28,8 @@ public class StudentInfoDao {
 		return sqlMapClientTemplate.queryForList("StudentInfo.list");
 	}
 	
-	public void delete(String studentId){
-		sqlMapClientTemplate.delete("StudentInfo.delete", studentId);
+	public void delete(String memberId){
+		sqlMapClientTemplate.delete("StudentInfo.delete", memberId);
 	}
 
 }

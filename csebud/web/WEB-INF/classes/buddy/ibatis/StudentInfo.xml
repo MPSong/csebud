@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="StudentInfo">
+	<typeAlias alias="StudentInfo" type="buddy.student.StudentInfo" />
+
+	<delete id="delete" parameterClass="String">
+		delete from studentinfo where studentId = #studentId#
+	</delete>
+
+	<insert id="add" parameterClass="StudentInfo">
+		insert into studentinfo (studentId, year, semester, englishTrack, memberId) values(#studentId#, #year#, #semester#, #englishTrack#, #memberId#)
+ 	</insert>
+ 	
+	<update id="update" parameterClass="StudentInfo">
+		update studentinfo set year = #year#, semester = #semester#, englishTrack = #englishTrack#, memberId = #memberId# where studentId = #studentId#
+	</update>
+ 	
+	<select id="get" parameterClass="String" resultClass="StudentInfo">
+		select * from studentinfo where studentId = #studentId#
+ 	</select>
+
+	<select id="list" resultClass="StudentInfo">
+		select * from studentinfo order by studentId
+ 	</select>
+</sqlMap>

@@ -161,7 +161,7 @@
 			
 		</div>
 		<div style="position: fixed; bottom: 50px; right: 80px;">
-			<a href="#header-wrapper"> <img src="image/top.jpg" title="위로 가기"
+			<a href="#header-wrapper"> <img src="image/top.png" title="위로 가기"
 				width="50px"; ></a>
 		</div>
 		</div>

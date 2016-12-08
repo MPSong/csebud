@@ -323,15 +323,6 @@ table tr td a {
 
 		</tr>
 		<tr>
-			<th>09:00~09:30</th>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-
-		</tr>
-		<tr>
 			<th>09:30~10:00</th>
 			<td></td>
 			<td></td>

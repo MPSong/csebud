@@ -19,8 +19,8 @@ public class LectureCourseDao {
 		sqlMapClientTemplate.update("Course.update", lectureCourse);	
 	}
 	
-	public LectureCourse get(String lectureInfo){
-		return (LectureCourse) sqlMapClientTemplate.queryForObject("LectureCourse.get", lectureInfo);
+	public LectureCourse get(String TimetableName){
+		return (LectureCourse) sqlMapClientTemplate.queryForObject("LectureCourse.get", TimetableName);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -28,8 +28,8 @@ public class LectureCourseDao {
 		return sqlMapClientTemplate.queryForList("LectureCourse.list");
 	}
 	
-	public void delete(String lectureInfo){
-		sqlMapClientTemplate.delete("LectureCourse.delete", lectureInfo);
+	public void delete(String TimetableName){
+		sqlMapClientTemplate.delete("LectureCourse.delete", TimetableName);
 	}
 
 }

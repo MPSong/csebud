@@ -46,7 +46,7 @@ table.graduation{
     font-family: "Trebuchet MS", sans-serif;
     font-size: 16px;
     font-weight: bold;
-    line-height: 1.4em;
+    line-height: 1.0em;
     font-style: normal;
     border-collapse:collapse;
 }
@@ -115,7 +115,7 @@ table.info{
     -moz-border-radius:5px 5px 0px 0px;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
-    height:10px;
+    height:12px;
     padding : 5px;
 }
 

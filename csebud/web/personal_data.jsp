@@ -75,6 +75,9 @@
 		</div>
 
 		<!-- Main -->
+	<c:choose>
+
+	<c:when test="${not empty sessionScope.userLoginInfo}">
 		<div id="main-wrapper">
 			<div class="container">
 				<div class="row">
@@ -93,7 +96,7 @@
 							</div>
 							<div
 								style="width: 100%; padding: 50px 10px 20px 30px; border: solid; height: 445px;">
-								<form>
+								<form name="Personal_data" method="post" action="personalDataProcess">
 									<div
 										style="display: inline-block; width: 20%; margin-left: 50px">학번:
 									</div>
@@ -140,11 +143,12 @@
 									</div>
 									<select name="english" style="display: inline-block">
 										<option value="">영어트랙</option>
-										<option value="1">A트랙(1~500등)</option>
-										<option value="2">A트랙(501~1000등)</option>
-										<option value="3">B트랙</option>
-										<option value="4">C트랙</option>
-									</select>
+										<option value="1">A트랙(E1)</option>
+										<option value="2">B트랙(E2)</option>
+										<option value="3">C트랙</option>
+									</select><br>
+									<br>
+									<input type="submit" class="button-alt" value="입력하기" style="width:100px;"/>
 								</form>
 							</div>
 
@@ -204,10 +208,6 @@
 								</div>
 							</div>
 							
-							<div style="float: right;">
-							<a href="#page-wrapper"><img src="image\top.jpg" style="width: 100%; float: right; width:50px" /></a>
-							</div>
-							
 						</div>
 
 
@@ -217,6 +217,32 @@
 
 			</div>
 		</div>
+		</c:when>
+		<c:otherwise>
+		<div id="main-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="12u">
+
+						<!-- Content -->
+						<div style="min-width:1100px; height: 900px; background-color:white;">
+						<br><br>
+						<center><div>
+							<img src="image/sorry.png"></div>
+							<font face="Impact, Charcoal, sans-serif" color="black" size="50"><h1>Sorry,<br><br> Please, Login First!!</h1></font>
+							<br><br><br>
+							<input type="button" value="메인페이지로" onclick="location.href='main.jsp'";>
+						</div>
+						
+						</center>
+
+					</div>
+
+				</div>
+			</div>
+		</div>		
+		</c:otherwise>
+		</c:choose>
 
 		<!-- Footer -->
 		<div id="footer-wrapper"><br>
@@ -238,7 +264,10 @@
 				</div>
 			
 		</div>
-
+		<div style="position: fixed; bottom: 50px; right: 80px;">
+			<a href="#header-wrapper"> <img src="image/top.png" title="위로 가기"
+				width="50px"; ></a>
+		</div>	
 	</div>
 
 	<!-- Scripts -->

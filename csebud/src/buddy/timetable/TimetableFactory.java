@@ -74,6 +74,7 @@ public class TimetableFactory {
    
    public void putTable(Timetable temp_table, int index){  //시간표에 집어넣는 메소드
       int column = getTableColumn(lecturePossible.get(index).FirstWeek);
+      
       for (int j = getTableRow(lecturePossible.get(index).FirstStartTime); j < getTableRow(lecturePossible.get(index).FirstEndTime); j++) {
          temp_table.putTable(j, column, lecturePossible.get(index));
       }

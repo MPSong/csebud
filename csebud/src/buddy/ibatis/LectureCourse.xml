@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="LectureCourse">
+	<typeAlias alias="LectureCourse" type="buddy.timetable.LectureCourse" />
+
+	<delete id="delete" parameterClass="String">
+		delete from lecture where TimetableName = #TimetableName#
+	</delete>
+
+	<insert id="add" parameterClass="LectureCourse">
+		insert into lecture (LectureInfo, Division, LectureName, Professor, FirstWeek, FirstStartTime, FirstEndTime, SecondWeek, SecondStartTime, SecondEndTime, FirstClassroom, SecondClassroom, Credit, TimetableName) 
+		values(#LectureInfo#, #Division#, #LectureName#, #Professor#, #FirstWeek#, #FirstStartTime#, #FirstEndTime#, #SecondWeek#, #SecondStartTime#, #SecondEndTime#, #FirstClassroom#, #SecondClassroom#, #Credit#, #TimetableName#)
+ 	</insert>
+ 	
+	<update id="update" parameterClass="LectureCourse">
+		update lecture set LectureInfo = #LectureInfo#, Division = #Division#, LectureName = #LectureName#, Professor = #Professor#, FirstWeek = #FirstWeek#, FirstStartTime = #FirstStartTime#, FirstEndTime = #FirstEndTime# 
+		SecondWeek = #SecondWeek#, SecondStartTime = #SecondStartTime#, SecondEndTime = #SecondEndTime#, FirstClassroom = #FirstClassroom#, SecondClassroom = #SecondClassroom#, Credit = #Credit# where TimetableName = #TimetableName#
+	</update>
+ 	
+	<select id="get" parameterClass="String" resultClass="LectureCourse">
+		select * from lecture where TimetableName = #TimetableName#
+ 	</select>
+
+	<select id="list" resultClass="LectureCourse">
+		select * from lecture order by lectureCode
+ 	</select>
+
+</sqlMap>

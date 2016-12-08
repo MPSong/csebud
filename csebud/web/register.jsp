@@ -122,9 +122,7 @@
                </div>
                
 				<br>
-				<div style="float: right;">
-				<a href="#page-wrapper"><img src="image\top.jpg" style="width: 100%; float: right; width:50px" /></a>&nbsp; &nbsp; 
-				</div><br>	               
+				<br>	               
                
             </div>
 
@@ -147,6 +145,10 @@
 					</div>
 				</div>
 			
+		</div>
+		<div style="position: fixed; bottom: 50px; right: 80px;">
+			<a href="#header-wrapper"> <img src="image/top.png" title="위로 가기"
+				width="50px"; ></a>
 		</div>
 
 		</div>

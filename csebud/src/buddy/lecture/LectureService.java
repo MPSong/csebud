@@ -38,23 +38,24 @@ public class LectureService {
 		dao.delete(lectureCode);
 	}
 	
+	public Lecture getByNameDiv(String lectureCode, String division){
+		
+		List<Lecture> list =  dao.list();
+		Lecture result = new Lecture();
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i).getLectureCode().equals(lectureCode)&&list.get(i).getDivision().equals(division)){
+				result = list.get(i);
+				return result;
+			}
+		}
+		
+		return null;
+	}
+	
 	public List<Lecture> getSearchItems(String keywords){
 		
 		List<Lecture> list =  dao.list();
 		List<Lecture> resultSet = new ArrayList<Lecture>();
-		
-		/*
-		// 검색된 키워드에 대해서 패턴 매칭 알고리즘 수행
-		for (int i = 0; i < list.size(); i++) {
-			
-			if (list.get(i).getLectureName().contains(keywords)) {
-				resultSet.add(list.get(i));
-			}	
-			
-		}
-		
-		return resultSet;
-		*/
 
 		Pattern p = Pattern.compile(keywords);
 		Matcher m;
@@ -78,7 +79,7 @@ public class LectureService {
 			}	
 			
 		}
-		System.out.println(Integer.toString(resultSet.size())+"크기");
+		
 		return resultSet;
 	}
 	

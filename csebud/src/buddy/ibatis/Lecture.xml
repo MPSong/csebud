@@ -21,7 +21,7 @@
 	</update>
  	
 	<select id="get" parameterClass="String" resultClass="Lecture">
-		select * from lecture where lectureCode = #lectureCode#
+		select * from lecture where lectureCode = #lectureCode#, division = #division#
  	</select>
 
 	<select id="list" resultClass="Lecture">

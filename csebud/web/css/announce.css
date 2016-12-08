@@ -70,6 +70,7 @@ em {
 
 .announce_td:first-child {
 	box-shadow: inset 1px 0 0 #fff;
+	width:70%;
 }	
 
 .announce_td:last-child {

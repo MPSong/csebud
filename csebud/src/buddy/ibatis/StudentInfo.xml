@@ -7,7 +7,7 @@
 	<typeAlias alias="StudentInfo" type="buddy.student.StudentInfo" />
 
 	<delete id="delete" parameterClass="String">
-		delete from studentinfo where studentId = #studentId#
+		delete from studentinfo where memberId = #memberId#
 	</delete>
 
 	<insert id="add" parameterClass="StudentInfo">
@@ -15,14 +15,14 @@
  	</insert>
  	
 	<update id="update" parameterClass="StudentInfo">
-		update studentinfo set year = #year#, semester = #semester#, englishTrack = #englishTrack#, memberId = #memberId# where studentId = #studentId#
+		update studentinfo set year = #year#, semester = #semester#, englishTrack = #englishTrack#, studentId = #studentId# where memberId = #memberId#
 	</update>
  	
 	<select id="get" parameterClass="String" resultClass="StudentInfo">
-		select * from studentinfo where studentId = #studentId#
+		select * from studentinfo where memberId = #memberId#
  	</select>
 
 	<select id="list" resultClass="StudentInfo">
-		select * from studentinfo order by studentId
+		select * from studentinfo order by memberId
  	</select>
 </sqlMap>

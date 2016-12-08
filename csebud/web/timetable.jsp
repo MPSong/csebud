@@ -178,7 +178,7 @@ table tr td a {
       var table1 = document.getElementById("table");
 
       //table1.rows[1].cells[1].innerHTML = "man";
-      for (var j = startrow; j < endrow; j++) {
+      for (var j = startrow; j < endrow-1; j++) {
          table1.rows[j].cells[week].style.backgroundColor = "#018Dc8";
          table1.rows[j].cells[week].innerHTML = text;
       }
@@ -187,10 +187,10 @@ table tr td a {
    function removeTime(startrow, endrow, week) {
 
       var table1 = document.getElementById("table");
-if(startrow=="50"||endrow=="50"||week=="50")
+if(startrow=="50"||endrow=="49"||week=="50")
    return;
       //table1.rows[1].cells[1].innerHTML = "man";
-      for (var j = startrow; j < endrow; j++) {
+      for (var j = startrow; j < endrow - 1; j++) {
          table1.rows[j].cells[week].style.backgroundColor = "#E6E6E6";
          table1.rows[j].cells[week].innerHTML = "";
       }
@@ -201,7 +201,7 @@ if(startrow=="50"||endrow=="50"||week=="50")
       var table1 = document.getElementById("table");
       //alert("dd: " + startrow + endrow + week);
       //table1.rows[1].cells[1].innerHTML = "man";
-      for (var j = startrow; j < endrow; j++) {
+      for (var j = startrow; j < endrow - 1; j++) {
          if (table1.rows[j].cells[week].innerHTML != "") {
             return true;
          }
@@ -212,7 +212,7 @@ if(startrow=="50"||endrow=="50"||week=="50")
 
    function merge(startrow, endrow, week) {
       //alert("d"+startrow);
-      var len = endrow - startrow;
+      var len = endrow - startrow - 1;
       var tObj = document.getElementById("table");
 
       if (1 < len) {
@@ -228,12 +228,12 @@ if(startrow=="50"||endrow=="50"||week=="50")
    }
 
    function divide(startrow, endrow, week) {
-      var len = endrow - startrow;
+      var len = endrow - startrow - 1;
       var tObj = document.getElementById("table");
 
       if (1 < len) {
 
-         for (var j = parseInt(startrow) + 1; j < endrow; j++) {
+         for (var j = parseInt(startrow) + 1; j < endrow - 1; j++) {
 
             tObj.rows[j].cells(week).style.display = "";
 
@@ -371,6 +371,9 @@ if(startrow=="50"||endrow=="50"||week=="50")
 		</div>
 
 		<!-- Main -->
+		<c:choose>
+
+		<c:when test="${not empty sessionScope.userLoginInfo}">
 		<div id="main-wrapper">
 			<div class="container">
 				<div class="row">
@@ -380,12 +383,12 @@ if(startrow=="50"||endrow=="50"||week=="50")
 						<!-- Content -->
 						<div
                      style="min-width: 1100px; background-color: white; padding: 50 0 0 0">
-                     <center>
+                     <br><center>
                         <h2>시간표 수동작성</h2>
                         <br> <br>
                      </center>
                      <div
-                        style="padding: 50 50 50 50; float: left; background-color: white; width: 60%; height: 1000px;">
+                        style="padding: 50 50 50 50; float: left; background-color: white; width: 60%; height: 1200px;">
                         <table id="table" border=1 class="tftable">
 
                            <tr>
@@ -395,15 +398,6 @@ if(startrow=="50"||endrow=="50"||week=="50")
                               <th>수</th>
                               <th>목</th>
                               <th>금</th>
-                           </tr>
-                           <tr>
-                              <th>09:00~09:30</th>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-
                            </tr>
                            <tr>
                               <th>09:00~09:30</th>
@@ -644,14 +638,7 @@ if(startrow=="50"||endrow=="50"||week=="50")
                               <td></td>
                            </tr>
 
-
-
-
-
-
-
                         </table>
-
 
                         <table id="mytable" border="2" cellspacing="0">
                            <th colspan="9">추가한 강의 목록</th>
@@ -692,22 +679,20 @@ if(startrow=="50"||endrow=="50"||week=="50")
                                     </tr>
                                  </thead>
                                  <tbody>
-                                 
+ 
                                  	<c:forEach items="${list}" var="lecture">
-
-                                    <tr class="timetable_tr">
-                                       <td style="display: none;">${lecture.firstStartTime}</td>
-                                       <td style="display: none;">${lecture.firstEndTime}</td>
-                                       <td style="display: none;">${lecture.firstWeekday}</td>
-                                       <td style="display: none;">${lecture.secondStartTime}</td>
-                                       <td style="display: none;">${lecture.secondEndTime}</td>
-                                       <td style="display: none;">${lecture.secondWeekday}</td>
-                                       <td class="timetable_td"><a href="#"
-                                          onclick="fn_text(this);">${lecture.lectureName}</a></td>
-                                       <td class="timetable_td">강의 시간</td>
-                                       <td class="timetable_td">${lecture.lectureCode}</td>
-                                    </tr>
-                                    
+	                                    <tr class="timetable_tr">
+	                                       <td style="display: none;">${lecture.firstStartTime}</td>
+	                                       <td style="display: none;">${lecture.firstEndTime}</td>
+	                                       <td style="display: none;">${lecture.firstWeekday}</td>
+	                                       <td style="display: none;">${lecture.secondStartTime}</td>
+	                                       <td style="display: none;">${lecture.secondEndTime}</td>
+	                                       <td style="display: none;">${lecture.secondWeekday}</td>
+	                                       <td class="timetable_td"><a href="#"
+	                                          onclick="fn_text(this);">${lecture.lectureName}</a></td>
+	                                       <td class="timetable_td">${lecture.lectureCode}</td>
+	                                       <td class="timetable_td">${lecture.professor}</td>
+	                                    </tr>
                                     </c:forEach>
 
                                  </tbody>
@@ -718,14 +703,36 @@ if(startrow=="50"||endrow=="50"||week=="50")
                      </div>
                   </div>
 
-
                </div>
-
             </div>
          </div>
       </div>
+      </c:when>
+      <c:otherwise>
+ 		<div id="main-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="12u">
 
+						<!-- Content -->
+						<div style="min-width:1100px; height: 900px; background-color:white;">
+						<br><br>
+						<center><div>
+							<img src="image/sorry.png"></div>
+							<font face="Impact, Charcoal, sans-serif" color="black" size="50"><h1>Sorry,<br><br> Please, Login First!!</h1></font>
+							<br><br><br>
+							<input type="button" value="메인페이지로" onclick="location.href='main'";>
+						</div>
+						
+						</center>
 
+					</div>
+
+				</div>
+			</div>
+		</div>     
+      </c:otherwise>
+	</c:choose>
 		<!-- Footer -->
 		<div id="footer-wrapper"><br>
 			<center>
@@ -746,7 +753,11 @@ if(startrow=="50"||endrow=="50"||week=="50")
 				</div>
 			
 		</div>
-
+		<div style="position: fixed; bottom: 50px; right: 80px;">
+			<a href="#header-wrapper"> <img src="image/top.png" title="위로 가기"
+				width="50px"; ></a>
+		</div>
+		
 	</div>
 
 	<!-- Scripts -->

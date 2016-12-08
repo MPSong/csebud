@@ -23,16 +23,16 @@ public class StudentManager {
 		s_dao.update(studentInfo);
 	}
 	
-	public StudentInfo s_get(String studentId){
-		return s_dao.get(studentId);
+	public StudentInfo s_get(String memberId){
+		return s_dao.get(memberId);
 	}
 
 	public List<StudentInfo> s_list(){
 		return s_dao.list();
 	}
 	
-	public void s_delete(String studentId){
-		s_dao.delete(studentId);
+	public void s_delete(String memberId){
+		s_dao.delete(memberId);
 	}
 	
 	
@@ -46,16 +46,16 @@ public class StudentManager {
 		c_dao.update(course);
 	}
 	
-	public Course c_get(String studentId){
-		return c_dao.get(studentId);
+	public Course c_get(String lectureName){
+		return c_dao.get(lectureName);
 	}
 
 	public List<Course> c_list(){
 		return c_dao.list();
 	}
 	
-	public void c_delete(String studentId){
-		c_dao.delete(studentId);
+	public void c_delete(String lectureName){
+		c_dao.delete(lectureName);
 	}
 	
 }

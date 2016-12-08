@@ -6,16 +6,9 @@ import javax.persistence.Id;
 @Entity
 public class LectureReview{
 	
-	@Id
-	int reviewCode;		// 해당 강의평가의 코드번호
-	
 	String writerId;	// 해당 강의평가의 작성자 아이디
 	
 	String content;		// 해당 강의평가의 내용
-	
-	String writtenTime;	// 해당 강의평가의 작성시간
-	
-	String lectureCode;	// 해당 강의평가에 해당하는 강의코드
 	
 	String lectureName; // 해당 강의평가에 해당하는 강의이름
 	
@@ -23,21 +16,7 @@ public class LectureReview{
 	
 	int starval;		// 해당 강의평가의 별점(1~10 : 점수 1점당 별 반개로 채점하며, 만점은 별 다섯개)
 
-	
-	/**
-	 * @return the reviewCode
-	 */
-	public int getReviewCode(){
-		return reviewCode;
-	}
-	
-	/**
-	 * @param reviewCode the reviewCode to set
-	 */
-	public void setReviewCode(int reviewCode){
-		this.reviewCode = reviewCode;
-	}
-	
+
 	/**
 	 * @return the writerId
 	 */
@@ -64,34 +43,6 @@ public class LectureReview{
 	 */
 	public void setContent(String content){
 		this.content = content;
-	}
-	
-	/**
-	 * @return the writtenTime
-	 */
-	public String getWrittenTime(){
-		return writtenTime;
-	}
-	
-	/**
-	 * @param writtenTime the writtenTime to set
-	 */
-	public void setWrittenTime(String writtenTime){
-		this.writtenTime = writtenTime;
-	}
-	
-	/**
-	 * @return the lectureCode
-	 */
-	public String getLectureCode(){
-		return lectureCode;
-	}
-	
-	/**
-	 * @param lectureCode the lectureCode to set
-	 */
-	public void setLectureCode(String lectureCode){
-		this.lectureCode = lectureCode;
 	}
 	
 	/**

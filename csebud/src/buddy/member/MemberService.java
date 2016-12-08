@@ -37,13 +37,18 @@ public class MemberService {
 		
 		Member member = new Member();
 		
-		if(id.equals(dao.get(id).getId())&&pass.equals(dao.get(id).getPass())){
-		// id&password 매칭시 Account 객체 반환	
-			member = dao.get(id);
-			return member;
-			
-		}
-		else{
+		if (dao.get(id)!=null) {
+			if(id.equals(dao.get(id).getId())&&pass.equals(dao.get(id).getPass())){
+				// id&password 매칭시 Account 객체 반환	
+					member = dao.get(id);
+					return member;
+					
+			}else{
+				
+				return null;
+				
+			}
+		}else{
 			
 			return null;
 			

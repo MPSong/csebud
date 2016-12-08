@@ -1,6 +1,7 @@
 package buddy.timetable;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import buddy.lecture.Lecture;
@@ -23,11 +24,61 @@ public class TimetableGenerator{
    public TimetableGenerator(){ // 생성자
       donggukRM=new RegulationManager();  //SQLException 나중에 지워야 할듯
       lecturePossible=new ArrayList<LecturePossible>();
-      timetable=new ArrayList<Timetable>();
+      setTimetable(new ArrayList<Timetable>());
       factory=new TimetableFactory();
       first_priority_num=0;
    }
 
+   public void cutTimetable(){
+	      ArrayList<Timetable> temp=new ArrayList<Timetable>();
+	      
+	      for(int i=0; i<timetable.size(); i++){
+	         String tempLecture=timetable.get(i).LectureInfo.get(0);
+	         String tempDivision=timetable.get(i).Division.get(0);
+	         Timetable tempTable=new Timetable();
+	         tempTable.LectureInfo.add(timetable.get(i).LectureInfo.get(0));
+	         tempTable.Division.add(timetable.get(i).Division.get(0));
+	         tempTable.FirstWeek.add(timetable.get(i).FirstWeek.get(0));
+	         tempTable.SecondWeek.add(timetable.get(i).SecondWeek.get(0));
+	         tempTable.FirstStartTime.add(timetable.get(i).FirstStartTime.get(0));
+	         tempTable.FirstEndTime.add(timetable.get(i).FirstEndTime.get(0));
+	         tempTable.SecondStartTime.add(timetable.get(i).SecondStartTime.get(0));
+	         tempTable.SecondEndTime.add(timetable.get(i).SecondEndTime.get(0));
+	         tempTable.Credit.add(timetable.get(i).Credit.get(0));
+	         temp.add(tempTable);
+	         
+	         for(int j=1; j<timetable.get(i).LectureInfo.size(); j++){
+	            if(timetable.get(i).LectureInfo.get(j).equals(tempLecture)&&timetable.get(i).Division.get(j).equals(tempDivision)){
+	               continue;
+	            }
+	            else{
+	               tempLecture=timetable.get(i).LectureInfo.get(j);
+	               tempDivision=timetable.get(i).Division.get(j);
+	               
+	               tempTable.LectureInfo.add(timetable.get(i).LectureInfo.get(j));
+	               tempTable.Division.add(timetable.get(i).Division.get(j));
+	               tempTable.FirstWeek.add(timetable.get(i).FirstWeek.get(j));
+	               tempTable.SecondWeek.add(timetable.get(i).SecondWeek.get(j));
+	               tempTable.FirstStartTime.add(timetable.get(i).FirstStartTime.get(j));
+	               tempTable.FirstEndTime.add(timetable.get(i).FirstEndTime.get(j));
+	               tempTable.SecondStartTime.add(timetable.get(i).SecondStartTime.get(j));
+	               tempTable.SecondEndTime.add(timetable.get(i).SecondEndTime.get(j));
+	               tempTable.Credit.add(timetable.get(i).Credit.get(j));
+	            }
+	         }
+	         
+	         
+	      }
+	      timetable=temp;
+	      
+	      
+	      
+	      for(int i=0; i<timetable.size(); i++){ //for test
+	         timetable.get(i).print();
+	         System.out.println("");
+	      }
+	   } 
+   
 	public void CreatePossibleLecture(List<Lecture> lectures, String regulation_num, List<Course> courses, RegulationManager donggukRM) { // Lecture을 LecturePossible에 집어넣는 메소드
 		Major_count=match_Regulation_to_Lecture(lectures, regulation_num, courses, donggukRM); // Lecture에서 강의를 뽑는다.
 		setPriority(Major_count); // 우선순위를 설정한다.
@@ -184,19 +235,22 @@ public class TimetableGenerator{
             break;
       }
       
-
-      for(int i=0; i<lecturePossible.size(); i++){ //test
-         System.out.println(lecturePossible.get(i).LectureInfo+" "+lecturePossible.get(i).priority);
-      }
-      
    }
 
    public void autoGenerateTimetable() { // 타임테이블을 생성한다.
-      timetable=factory.makeTimetable(lecturePossible, max_credit, first_priority_num);
+      setTimetable(factory.makeTimetable(lecturePossible, max_credit, first_priority_num));
    }
    
    public void setCredit_max(int max_credit){ //최대로 들을 학점 set
       this.max_credit=max_credit;
    }
+
+public ArrayList<Timetable> getTimetable() {
+	return timetable;
+}
+
+public void setTimetable(ArrayList<Timetable> timetable) {
+	this.timetable = timetable;
+}
 
 }

@@ -145,4 +145,12 @@ form select {
 	}
 	
 	
+form input[type=submit]{
+   background-color:#018dc8;
+   height:50px;
+   padding:0px;
+   float:right;
+   margin:0 20 100 0;
+   font-size:14px;
+}
 	

@@ -4,24 +4,24 @@ import java.util.ArrayList;
 
 public class Timetable {
 
-   private ArrayList<String> LectureInfo=new ArrayList<String>(); // 학수번호
-   private ArrayList<String> Division=new ArrayList<String>(); // 분반
+   public ArrayList<String> LectureInfo=new ArrayList<String>(); // 학수번호
+   public ArrayList<String> Division=new ArrayList<String>(); // 분반
 
-   private ArrayList<String> LectureName=new ArrayList<String>(); // 강의이름
-   private ArrayList<String> Professor=new ArrayList<String>(); // 교원명
+   public ArrayList<String> LectureName=new ArrayList<String>(); // 강의이름
+   public ArrayList<String> Professor=new ArrayList<String>(); // 교원명
 
-   private ArrayList<String> FirstWeek=new ArrayList<String>(); // 첫번째 요일
-   private ArrayList<String> FirstStartTime=new ArrayList<String>(); // 첫번째 시작시각
-   private ArrayList<String> FirstEndTime=new ArrayList<String>(); // 첫번째 종료시각
+   public ArrayList<String> FirstWeek=new ArrayList<String>(); // 첫번째 요일
+   public ArrayList<String> FirstStartTime=new ArrayList<String>(); // 첫번째 시작시각
+   public ArrayList<String> FirstEndTime=new ArrayList<String>(); // 첫번째 종료시각
 
-   private ArrayList<String> SecondWeek=new ArrayList<String>(); // 두번째 요일
-   private ArrayList<String> SecondStartTime=new ArrayList<String>(); // 두번째 시작시각
-   private ArrayList<String> SecondEndTime=new ArrayList<String>(); // 두번째 종료시각
+   public ArrayList<String> SecondWeek=new ArrayList<String>(); // 두번째 요일
+   public ArrayList<String> SecondStartTime=new ArrayList<String>(); // 두번째 시작시각
+   public ArrayList<String> SecondEndTime=new ArrayList<String>(); // 두번째 종료시각
 
-   private ArrayList<String> FirstClassroom=new ArrayList<String>(); // 첫번째 강의실
-   private ArrayList<String> SecondClassroom=new ArrayList<String>(); // 두번째 강의실
+   public ArrayList<String> FirstClassroom=new ArrayList<String>(); // 첫번째 강의실
+   public ArrayList<String> SecondClassroom=new ArrayList<String>(); // 두번째 강의실
 
-   private ArrayList<Integer> Credit=new ArrayList<Integer>(); // 학점
+   public ArrayList<Integer> Credit=new ArrayList<Integer>(); // 학점
    //private ArrayList<boolean> IsEnglish=new ArrayList<boolean>(); // 영어강의 여부
    
    public String[][]table; //시간표
@@ -72,7 +72,11 @@ public class Timetable {
    
    public void print(){ //테스트 용
       for(int i=0; i<LectureInfo.size(); i++){
-         System.out.println(LectureInfo.get(i)+"-"+Division.get(i));
+         System.out.print(LectureInfo.get(i)+"-"+Division.get(i)+" ");
+         System.out.print(FirstWeek.get(i)+FirstStartTime.get(i)+" "+FirstEndTime.get(i));
+         System.out.print(SecondWeek.get(i)+SecondStartTime.get(i)+SecondEndTime.get(i)+" ");
+         System.out.print(Credit.get(i)+"\n");
+         
       }
    }
    /*
